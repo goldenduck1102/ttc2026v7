@@ -1,0 +1,31 @@
+/* Shared components kept from the previous layout: site footer and the OrcheStars site footer. */
+/* Public homepage footer structure; retains this landing's two-font contract. */
+.site-footer { background: var(--color-site-paper); color: var(--color-site-ink); padding: 36px max(24px, calc((100% - var(--layout-content-max)) / 2)) 16px; border-top: 1px solid var(--color-site-border); }
+.site-footer-grid { display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 45px; }
+.site-footer h3 { font: 600 24px/1.2 var(--font-heading); margin-bottom: 22px; }
+.site-footer a:hover { color: var(--color-brand); }
+.footer-contact-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 18px; color: var(--color-site-muted); font: 400 13px/1.6 var(--font-body); }
+.footer-contact-row > .arrow-icon { width: 19px; height: 19px; margin-top: 1px; flex-shrink: 0; }
+.site-footer-name { display: block; font: 600 28px/1.2 var(--font-heading); text-align: center; margin-bottom: 24px; }
+.site-footer-company > p { max-width: 400px; margin-inline: auto; color: var(--color-site-muted); font: 400 12px/1.65 var(--font-body); }
+.site-footer-policies { text-align: right; }
+.site-footer-policies nav { display: flex; flex-direction: column; gap: 8px; }
+.site-footer-policies nav > a { font: 400 12px/1.6 var(--font-body); color: var(--color-site-muted); }
+.site-footer-policies nav > a:hover { color: var(--color-brand); text-decoration: underline; }
+.site-footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding-top: 60px; }
+.site-footer-bottom > p { color: var(--color-site-muted); font: 400 11px/1.5 var(--font-body); }
+.site-footer-socials { display: flex; align-items: center; gap: 15px; }
+.site-footer-socials > a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--color-site-ink); color: var(--color-site-paper); }
+.site-footer-socials > a:hover { background: var(--color-brand); color: var(--color-site-paper); }
+.site-footer-socials .arrow-icon { width: 16px; height: 16px; }
+@media (max-width: 1000px) { .site-footer-grid { gap: 25px; } }
+@media (max-width: 767px) {
+  .site-footer { padding: 35px 24px 22px; }
+  .site-footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .site-footer-company { order: -1; }
+  .site-footer-name { text-align: center; font-size: 28px; margin-bottom: 18px; }
+  .site-footer h3 { text-align: center; margin-bottom: 18px; }
+  .site-footer-connect { max-width: 400px; margin-inline: auto; }
+  .site-footer-policies { text-align: center; }
+  .site-footer-bottom { flex-direction: column; padding-top: 35px; gap: 22px; text-align: center; }
+}
