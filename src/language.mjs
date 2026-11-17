@@ -1,7 +1,7 @@
 import { FAQ_ITEMS } from './content.mjs';
 
 const translations = {
- 'Đến nội dung chính':'Skip to content', 'Sự kiện':'Event', 'Hạng vé':'Tickets', 'Khoảnh khắc':'Gallery', 'Kí ức':'Memories', 'Địa điểm':'Venue', 'Hỏi đáp':'FAQ',
+ 'Đến nội dung chính':'Skip to content', 'Sự kiện':'Event', 'Hạng vé':'Tickets', 'Khoảnh khắc 2025':'2025 Gallery', 'Kí ức':'Memories', 'Địa điểm':'Venue', 'Hỏi đáp':'FAQ',
  'Mua vé':'Book tickets', 'Mua vé ngay':'Book now', 'Về đêm nhạc':'About the concert', 'Giao hưởng & Broadway':'Symphony & Broadway', 'Vé từ 200.000đ':'Tickets from 200,000₫',
  'Hãy cùng OrcheStars bước vào':'Join OrcheStars for',
  '— một hành trình âm nhạc qua những mùa Giáng Sinh, từ niềm háo hức chờ quà thời thơ bé đến những cảm xúc khi trưởng thành.':'— a musical journey through Christmases past and present, from childhood anticipation to the emotions of growing up.',

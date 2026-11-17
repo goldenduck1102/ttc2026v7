@@ -767,3 +767,9 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
   .acts .act:first-child p { font-size: clamp(10px, .84vw, 12px); white-space: nowrap; }
   .acts .act:nth-child(3) h3 { font-size: clamp(18px, 1.65vw, 24px); white-space: nowrap; }
 }
+
+/* Keep the closing invitation on two lines on large desktop screens. */
+@media (min-width: 1600px) {
+  .final h2 { max-width: 1200px; }
+  .final h2 em { display: block; }
+}
