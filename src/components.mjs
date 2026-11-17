@@ -109,7 +109,7 @@ function TierInput(tier, option) {
 function TicketHead(option) {
   const id = option === 'a' ? 'lineup-title' : `lineup-title-${option}`;
   const tone = option === 'b' ? ' tone="on-red"' : '';
-  return `<div class="tk-head"><div><ui-num-tag number="02" label="Hạng vé"${tone}></ui-num-tag><h2 class="display" id="${id}">Chọn vị trí <em>thưởng thức buổi diễn</em></h2></div><div class="tk-head-copy"><p class="tk-when"><span>19 &amp; 20.12.2026</span><span>18:00 · 20:00</span></p></div></div>`;
+  return `<div class="tk-head"><div><ui-num-tag number="02" label="Hạng vé"${tone}></ui-num-tag><h2 class="display" id="${id}">Chọn vị trí <em>thưởng thức buổi diễn</em></h2></div><div class="tk-head-copy"><p class="tk-when"><span>19 &amp; 20.12.2026</span><span>17:30–19:00 · 19:30–21:00</span></p></div></div>`;
 }
 
 function TicketMap(option) {

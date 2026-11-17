@@ -23,8 +23,8 @@
   --color-focus: var(--color-accent);
 
   /* Exactly two families: important display text and readable supporting text. */
-  --font-heading: 'Cormorant Upright', Georgia, serif;
-  --font-body: 'Be Vietnam Pro', Arial, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Google Sans', system-ui, -apple-system, Arial, sans-serif;
   --font-display-latin: var(--font-heading);
   --font-display-vi: var(--font-heading);
   --font-event-display: var(--font-heading);

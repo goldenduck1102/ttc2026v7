@@ -7,11 +7,12 @@
 html { scroll-behavior: smooth; scroll-padding-top: 88px; -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--paper) var(--noise); color: var(--ink); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, p, figure, dl, dd { margin: 0; }
-h1, h2, h3 { font-family: var(--font-heading); }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 p { line-height: 1.2; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; height: auto; }
 i, em { font-style: normal; }
+input, select, textarea { font: inherit; }
 button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
 button, a, summary { -webkit-tap-highlight-color: transparent; }
 button:disabled { opacity: .4; cursor: default; }
@@ -143,6 +144,9 @@ section { position: relative; }
 .fact-label { font: 700 11px/1.4 var(--font-body); letter-spacing: .22em; text-transform: uppercase; color: var(--red); }
 .fact strong { display: block; font: 700 30px/1.08 var(--font-heading); margin-top: 10px; }
 .fact span { display: block; font-size: 14px; line-height: 1.5; color: var(--ink-2); margin-top: 6px; }
+.fact-shows strong { font-size: clamp(20px, 2vw, 26px); margin-top: 4px; white-space: nowrap; }
+.fact-shows > span:first-child { margin-top: 10px; }
+.fact-shows strong + span { margin-top: 12px; }
 .acts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 96px; }
 .act { position: relative; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 3 / 4; color: var(--snow); transform: rotate(var(--rot, 0)); transition: transform .5s var(--ease), opacity .9s var(--ease); }
 .act:nth-child(1) { --rot: -2deg; }
@@ -153,7 +157,6 @@ section { position: relative; }
 .act img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
 .act:hover img { transform: scale(1.06); }
 .act::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, rgba(40, 8, 10, .9)); }
-.act-no { position: absolute; top: 18px; left: 18px; z-index: 2; width: 64px; height: 64px; border-radius: 50%; background: var(--gold); color: var(--ink); display: grid; place-items: center; font: 700 26px/1 var(--font-heading); transform: rotate(-12deg); box-shadow: 0 4px 0 rgba(0, 0, 0, .25); }
 .act-body { position: absolute; left: 24px; right: 24px; bottom: 24px; z-index: 2; }
 .act h3 { font-size: 32px; line-height: 1.05; font-weight: 700; }
 .act p { font-size: 15px; line-height: 1.5; opacity: .88; margin-top: 8px; }
@@ -179,6 +182,7 @@ section { position: relative; }
 .shows .sec-head-copy { color: color-mix(in srgb, var(--snow) 78%, transparent); }
 .shows .sec-head-copy .pill { margin-top: 22px; }
 .shows .display em { color: var(--gold-soft); }
+#nights-title { font-size: clamp(28px, 4.2vw, 60px); line-height: 1.12; }
 .show-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 32px; }
 .show-card { position: relative; background: var(--snow); color: var(--ink); padding: 12px 12px 22px; border-radius: 6px; transform: rotate(var(--r, 0)); box-shadow: 0 30px 50px -24px rgba(0, 0, 0, .6); transition: transform .5s var(--ease); }
 .show-card:nth-child(1) { --r: -1.4deg; }
@@ -754,3 +758,12 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
 .tk-dialog-map.is-zoomed { cursor: grab; }
 .tk-dialog-map.is-zoomed:active { cursor: grabbing; }
 @media (max-width: 700px) { .tk-b .tk-map-button { padding-bottom: 0; } }
+
+/* Keep complete show intervals inside the venue cards at every width. */
+.checkins strong.show-range { font-size: clamp(16px, 2.3vw, 24px); white-space: nowrap; }
+
+/* Keep the requested artist caption and choir name on one desktop line. */
+@media (min-width: 981px) {
+  .acts .act:first-child p { font-size: clamp(10px, .84vw, 12px); white-space: nowrap; }
+  .acts .act:nth-child(3) h3 { font-size: clamp(18px, 1.65vw, 24px); white-space: nowrap; }
+}

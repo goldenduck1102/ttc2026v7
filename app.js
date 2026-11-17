@@ -100,8 +100,8 @@ const countObserver = new IntersectionObserver(entries => entries.forEach(entry 
 }), { threshold: .6 });
 $$('[data-count]').forEach(el => countObserver.observe(el));
 
-/* Countdown to the first show: 19/12/2026 18:00 (GMT+7) */
-const target = new Date('2026-12-19T18:00:00+07:00').getTime();
+/* Countdown to the first show: 19/12/2026 17:30 (GMT+7) */
+const target = new Date('2026-12-19T17:30:00+07:00').getTime();
 function tick() {
   const s = Math.max(0, Math.floor((target - Date.now()) / 1000));
   const v = { d: Math.floor(s / 86400), h: Math.floor(s % 86400 / 3600), m: Math.floor(s % 3600 / 60), s: s % 60 };

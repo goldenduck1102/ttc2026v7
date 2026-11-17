@@ -11,7 +11,7 @@ export const FAQ_ITEMS = [
   },
   {
     "question": "Tôi cần đến lúc mấy giờ?",
-    "answer": "Check-in từ 17:15 cho suất 18:00; từ 19:15 cho suất 20:00. Bạn nên đến trước giờ diễn ít nhất 30 phút. Ban tổ chức ngừng nhận check-in lúc 18:15 hoặc 20:15, tương ứng từng suất."
+    "answer": "Check-in từ 16:45 cho suất 17:30–19:00; từ 18:45 cho suất 19:30–21:00. Bạn nên đến trước giờ diễn ít nhất 30 phút. Ban tổ chức ngừng nhận check-in lúc 17:45 hoặc 19:45, tương ứng từng suất."
   },
   {
     "question": "Tôi cần mang gì để check-in?",
@@ -111,6 +111,6 @@ export const BOOKING_DAYS = [
   { value: '20', label: 'Chủ Nhật 20.12', full: 'Chủ Nhật 20.12.2026' },
 ];
 export const BOOKING_SHOWS = [
-  { time: '18:00', checkin: '17:15' },
-  { time: '20:00', checkin: '19:15' },
+  { time: '17:30', end: '19:00', checkin: '16:45' },
+  { time: '19:30', end: '21:00', checkin: '18:45' },
 ];
