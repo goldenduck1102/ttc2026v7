@@ -145,6 +145,7 @@ section { position: relative; }
 .fact strong { display: block; font: 700 30px/1.08 var(--font-heading); margin-top: 10px; }
 .fact span { display: block; font-size: 14px; line-height: 1.5; color: var(--ink-2); margin-top: 6px; }
 .fact-shows strong { font-size: clamp(20px, 2vw, 26px); margin-top: 4px; white-space: nowrap; }
+.facts > .fact:nth-child(3) dd > strong { font-size: clamp(20px, 2vw, 26px); line-height: 1.15; }
 .fact-shows > span:first-child { margin-top: 10px; }
 .fact-shows strong + span { margin-top: 12px; }
 .acts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 96px; }

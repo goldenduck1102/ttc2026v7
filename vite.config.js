@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { renderComponents } from './src/components.mjs';
+import { optimizeImageMarkup } from './src/image-markup.mjs';
 
 const repository = process.env.GITHUB_REPOSITORY?.split('/')[1];
 const owner = process.env.GITHUB_REPOSITORY?.split('/')[0];
@@ -17,12 +18,14 @@ export default defineConfig({
   base: repository ? `/${repository}/` : '/',
   plugins: [{
     name: 'orchestars-shared-components',
-    transformIndexHtml: { order: 'pre', handler: (html) => pagesAssetPaths(renderComponents(html)) },
+    transformIndexHtml: { order: 'pre', handler: (html) => pagesAssetPaths(optimizeImageMarkup(renderComponents(html))) },
     configureServer(server) {
-      server.watcher.add(new URL('./src/components.mjs', import.meta.url).pathname);
+      for (const path of ['./src/components.mjs', './src/image-manifest.json']) {
+        server.watcher.add(new URL(path, import.meta.url).pathname);
+      }
     },
     async handleHotUpdate(context) {
-      if (context.file.endsWith('/src/components.mjs')) {
+      if (['/src/components.mjs', '/src/image-manifest.json'].some(path => context.file.endsWith(path))) {
         // Restart reloads the imported render functions as well as the browser.
         await context.server.restart();
         return [];

@@ -1,0 +1,727 @@
+{
+  "/assets/ttc2026-banner.webp": {
+    "src": "/assets/ttc2026-banner.webp",
+    "width": 2560,
+    "height": 1440,
+    "sizes": "(min-width: 1272px) 1240px, calc(100vw - 32px)",
+    "variants": [
+      {
+        "src": "/assets/ttc2026-banner-640.webp",
+        "width": 640,
+        "bytes": 38622
+      },
+      {
+        "src": "/assets/ttc2026-banner-960.webp",
+        "width": 960,
+        "bytes": 71834
+      },
+      {
+        "src": "/assets/ttc2026-banner-1280.webp",
+        "width": 1280,
+        "bytes": 104740
+      },
+      {
+        "src": "/assets/ttc2026-banner-1920.webp",
+        "width": 1920,
+        "bytes": 192160
+      },
+      {
+        "src": "/assets/ttc2026-banner.webp",
+        "width": 2560,
+        "bytes": 255540
+      }
+    ]
+  },
+  "/assets/ttc2026-poster.webp": {
+    "src": "/assets/ttc2026-poster.webp",
+    "width": 1600,
+    "height": 2000,
+    "sizes": "(max-width: 480px) calc(100vw - 56px), (max-width: 980px) 416px, (min-width: 1232px) 428px, calc(40vw - 66px)",
+    "variants": [
+      {
+        "src": "/assets/ttc2026-poster-480.webp",
+        "width": 480,
+        "bytes": 57754
+      },
+      {
+        "src": "/assets/ttc2026-poster-800.webp",
+        "width": 800,
+        "bytes": 130920
+      },
+      {
+        "src": "/assets/ttc2026-poster-1200.webp",
+        "width": 1200,
+        "bytes": 245290
+      },
+      {
+        "src": "/assets/ttc2026-poster.webp",
+        "width": 1600,
+        "bytes": 371696
+      }
+    ]
+  },
+  "/assets/artists/phu-son.webp": {
+    "src": "/assets/artists/phu-son.webp",
+    "width": 960,
+    "height": 1440,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/artists/phu-son-480.webp",
+        "width": 480,
+        "bytes": 13990
+      },
+      {
+        "src": "/assets/artists/phu-son.webp",
+        "width": 960,
+        "bytes": 32782
+      }
+    ]
+  },
+  "/assets/artists/craig.webp": {
+    "src": "/assets/artists/craig.webp",
+    "width": 960,
+    "height": 978,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/artists/craig-480.webp",
+        "width": 480,
+        "bytes": 19714
+      },
+      {
+        "src": "/assets/artists/craig.webp",
+        "width": 960,
+        "bytes": 44896
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-01-large.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-01-large.webp",
+    "width": 1800,
+    "height": 1200,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-01-large-960.webp",
+        "width": 960,
+        "bytes": 83926
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-01-large-1280.webp",
+        "width": 1280,
+        "bytes": 124038
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-01-large.webp",
+        "width": 1800,
+        "bytes": 220162
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-01-thumb.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-01-thumb.webp",
+    "width": 720,
+    "height": 480,
+    "sizes": "(max-width: 700px) calc(100vw - 56px), (min-width: 1232px) 388px, calc((100vw - 68px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-01-thumb-480.webp",
+        "width": 480,
+        "bytes": 27248
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-01-thumb.webp",
+        "width": 720,
+        "bytes": 59602
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-02-large.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-02-large.webp",
+    "width": 1800,
+    "height": 1200,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-02-large-960.webp",
+        "width": 960,
+        "bytes": 73750
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-02-large-1280.webp",
+        "width": 1280,
+        "bytes": 106754
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-02-large.webp",
+        "width": 1800,
+        "bytes": 190444
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-02-thumb.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-02-thumb.webp",
+    "width": 720,
+    "height": 480,
+    "sizes": "(max-width: 700px) calc(100vw - 56px), (min-width: 1232px) 388px, calc((100vw - 68px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-02-thumb-480.webp",
+        "width": 480,
+        "bytes": 25182
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-02-thumb.webp",
+        "width": 720,
+        "bytes": 50808
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-03-large.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-03-large.webp",
+    "width": 1800,
+    "height": 1200,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-03-large-960.webp",
+        "width": 960,
+        "bytes": 58754
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-03-large-1280.webp",
+        "width": 1280,
+        "bytes": 84028
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-03-large.webp",
+        "width": 1800,
+        "bytes": 143662
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-03-thumb.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-03-thumb.webp",
+    "width": 720,
+    "height": 480,
+    "sizes": "(max-width: 700px) calc(100vw - 56px), (min-width: 1232px) 388px, calc((100vw - 68px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-03-thumb-480.webp",
+        "width": 480,
+        "bytes": 20446
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-03-thumb.webp",
+        "width": 720,
+        "bytes": 43068
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-04-large.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-04-large.webp",
+    "width": 1800,
+    "height": 1200,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-04-large-960.webp",
+        "width": 960,
+        "bytes": 69994
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-04-large-1280.webp",
+        "width": 1280,
+        "bytes": 101674
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-04-large.webp",
+        "width": 1800,
+        "bytes": 174152
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-04-thumb.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-04-thumb.webp",
+    "width": 720,
+    "height": 480,
+    "sizes": "(max-width: 700px) calc(100vw - 56px), (min-width: 1232px) 388px, calc((100vw - 68px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-04-thumb-480.webp",
+        "width": 480,
+        "bytes": 23028
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-04-thumb.webp",
+        "width": 720,
+        "bytes": 48938
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-05-large.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-05-large.webp",
+    "width": 1800,
+    "height": 1200,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-05-large-960.webp",
+        "width": 960,
+        "bytes": 71830
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-05-large-1280.webp",
+        "width": 1280,
+        "bytes": 106954
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-05-large.webp",
+        "width": 1800,
+        "bytes": 202634
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-05-thumb.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-05-thumb.webp",
+    "width": 720,
+    "height": 480,
+    "sizes": "(max-width: 700px) calc(100vw - 56px), (min-width: 1232px) 388px, calc((100vw - 68px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-05-thumb-480.webp",
+        "width": 480,
+        "bytes": 22600
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-05-thumb.webp",
+        "width": 720,
+        "bytes": 48740
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-06-large.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-06-large.webp",
+    "width": 1800,
+    "height": 1200,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-06-large-960.webp",
+        "width": 960,
+        "bytes": 55596
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-06-large-1280.webp",
+        "width": 1280,
+        "bytes": 81388
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-06-large.webp",
+        "width": 1800,
+        "bytes": 148380
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-06-thumb.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-06-thumb.webp",
+    "width": 720,
+    "height": 480,
+    "sizes": "(max-width: 700px) calc(100vw - 56px), (min-width: 1232px) 388px, calc((100vw - 68px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-06-thumb-480.webp",
+        "width": 480,
+        "bytes": 17170
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-06-thumb.webp",
+        "width": 720,
+        "bytes": 35642
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-07-large.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-07-large.webp",
+    "width": 1800,
+    "height": 1200,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-07-large-960.webp",
+        "width": 960,
+        "bytes": 55816
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-07-large-1280.webp",
+        "width": 1280,
+        "bytes": 82026
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-07-large.webp",
+        "width": 1800,
+        "bytes": 158032
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-07-thumb.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-07-thumb.webp",
+    "width": 720,
+    "height": 480,
+    "sizes": "(max-width: 700px) calc(100vw - 56px), (min-width: 1232px) 388px, calc((100vw - 68px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-07-thumb-480.webp",
+        "width": 480,
+        "bytes": 17268
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-07-thumb.webp",
+        "width": 720,
+        "bytes": 37546
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-08-large.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-08-large.webp",
+    "width": 1800,
+    "height": 1200,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-08-large-720.webp",
+        "width": 720,
+        "bytes": 39220
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-08-large-1200.webp",
+        "width": 1200,
+        "bytes": 79216
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-08-large.webp",
+        "width": 1800,
+        "bytes": 150256
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-08-thumb.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-08-thumb.webp",
+    "width": 720,
+    "height": 480,
+    "sizes": "(max-width: 700px) calc(100vw - 56px), (min-width: 1232px) 388px, calc((100vw - 68px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-08-thumb-480.webp",
+        "width": 480,
+        "bytes": 18606
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-08-thumb.webp",
+        "width": 720,
+        "bytes": 40004
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-11-large.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-11-large.webp",
+    "width": 1800,
+    "height": 1200,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-11-large-960.webp",
+        "width": 960,
+        "bytes": 68298
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-11-large-1280.webp",
+        "width": 1280,
+        "bytes": 102274
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-11-large.webp",
+        "width": 1800,
+        "bytes": 187430
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-11-thumb.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-11-thumb.webp",
+    "width": 720,
+    "height": 480,
+    "sizes": "(max-width: 700px) calc(100vw - 56px), (min-width: 1232px) 388px, calc((100vw - 68px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-11-thumb-480.webp",
+        "width": 480,
+        "bytes": 21740
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-11-thumb.webp",
+        "width": 720,
+        "bytes": 47330
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-12-large.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-12-large.webp",
+    "width": 1800,
+    "height": 1200,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-12-large-960.webp",
+        "width": 960,
+        "bytes": 62772
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-12-large-1280.webp",
+        "width": 1280,
+        "bytes": 90772
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-12-large.webp",
+        "width": 1800,
+        "bytes": 165500
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-12-thumb.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-12-thumb.webp",
+    "width": 720,
+    "height": 480,
+    "sizes": "(max-width: 700px) calc(100vw - 56px), (min-width: 1232px) 388px, calc((100vw - 68px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-12-thumb-480.webp",
+        "width": 480,
+        "bytes": 20234
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-12-thumb.webp",
+        "width": 720,
+        "bytes": 42628
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-13-large.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-13-large.webp",
+    "width": 1200,
+    "height": 1800,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-13-large-960.webp",
+        "width": 960,
+        "bytes": 61100
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-13-large.webp",
+        "width": 1200,
+        "bytes": 95140
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-13-thumb.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-13-thumb.webp",
+    "width": 480,
+    "height": 720,
+    "sizes": "(max-width: 700px) calc(100vw - 56px), (min-width: 1232px) 388px, calc((100vw - 68px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-13-thumb.webp",
+        "width": 480,
+        "bytes": 23790
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-16-large.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-16-large.webp",
+    "width": 1200,
+    "height": 1800,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-16-large-960.webp",
+        "width": 960,
+        "bytes": 68308
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-16-large.webp",
+        "width": 1200,
+        "bytes": 99596
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-16-thumb.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-16-thumb.webp",
+    "width": 480,
+    "height": 720,
+    "sizes": "(max-width: 700px) calc(100vw - 56px), (min-width: 1232px) 388px, calc((100vw - 68px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-16-thumb.webp",
+        "width": 480,
+        "bytes": 29196
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-group-large.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-group-large.webp",
+    "width": 1800,
+    "height": 1013,
+    "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-group-large-960.webp",
+        "width": 960,
+        "bytes": 63004
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-group-large-1280.webp",
+        "width": 1280,
+        "bytes": 90562
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-group-large.webp",
+        "width": 1800,
+        "bytes": 156082
+      }
+    ]
+  },
+  "/assets/christmas-2025/christmas-2025-group-thumb.webp": {
+    "src": "/assets/christmas-2025/christmas-2025-group-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "sizes": "(max-width: 700px) calc(100vw - 56px), (min-width: 1232px) 388px, calc((100vw - 68px) / 3)",
+    "variants": [
+      {
+        "src": "/assets/christmas-2025/christmas-2025-group-thumb-480.webp",
+        "width": 480,
+        "bytes": 21004
+      },
+      {
+        "src": "/assets/christmas-2025/christmas-2025-group-thumb.webp",
+        "width": 720,
+        "bytes": 44506
+      }
+    ]
+  },
+  "/assets/programmes/aot-25.jpg": {
+    "src": "/assets/programmes/aot-25.webp",
+    "width": 1800,
+    "height": 663,
+    "sizes": "(max-width: 700px) calc(90vw - 53px), (min-width: 1232px) 560px, calc((100vw - 112px) / 2)",
+    "variants": [
+      {
+        "src": "/assets/programmes/aot-25-640.webp",
+        "width": 640,
+        "bytes": 20250
+      },
+      {
+        "src": "/assets/programmes/aot-25-1200.webp",
+        "width": 1200,
+        "bytes": 50788
+      },
+      {
+        "src": "/assets/programmes/aot-25.webp",
+        "width": 1800,
+        "bytes": 90116
+      }
+    ]
+  },
+  "/assets/programmes/disney-25.jpg": {
+    "src": "/assets/programmes/disney-25.webp",
+    "width": 1800,
+    "height": 742,
+    "sizes": "(max-width: 700px) calc(90vw - 53px), (min-width: 1232px) 560px, calc((100vw - 112px) / 2)",
+    "variants": [
+      {
+        "src": "/assets/programmes/disney-25-640.webp",
+        "width": 640,
+        "bytes": 23768
+      },
+      {
+        "src": "/assets/programmes/disney-25-1200.webp",
+        "width": 1200,
+        "bytes": 61726
+      },
+      {
+        "src": "/assets/programmes/disney-25.webp",
+        "width": 1800,
+        "bytes": 108696
+      }
+    ]
+  },
+  "/assets/programmes/ghibli.jpg": {
+    "src": "/assets/programmes/ghibli.webp",
+    "width": 1440,
+    "height": 2037,
+    "sizes": "(max-width: 700px) 140px, 240px",
+    "variants": [
+      {
+        "src": "/assets/programmes/ghibli-480.webp",
+        "width": 480,
+        "bytes": 67540
+      },
+      {
+        "src": "/assets/programmes/ghibli-960.webp",
+        "width": 960,
+        "bytes": 164620
+      },
+      {
+        "src": "/assets/programmes/ghibli.webp",
+        "width": 1440,
+        "bytes": 266102
+      }
+    ]
+  },
+  "/assets/programmes/ttc-2025.jpg": {
+    "src": "/assets/programmes/ttc-2025.webp",
+    "width": 1800,
+    "height": 843,
+    "sizes": "(max-width: 700px) calc(90vw - 53px), (min-width: 1232px) 560px, calc((100vw - 112px) / 2)",
+    "variants": [
+      {
+        "src": "/assets/programmes/ttc-2025-640.webp",
+        "width": 640,
+        "bytes": 25260
+      },
+      {
+        "src": "/assets/programmes/ttc-2025-1200.webp",
+        "width": 1200,
+        "bytes": 65746
+      },
+      {
+        "src": "/assets/programmes/ttc-2025.webp",
+        "width": 1800,
+        "bytes": 117158
+      }
+    ]
+  },
+  "/assets/renaissance-exterior.jpg": {
+    "src": "/assets/renaissance-exterior.webp",
+    "width": 1400,
+    "height": 787,
+    "sizes": "(max-width: 900px) calc(100vw - 52px), (min-width: 1232px) 540px, 45vw",
+    "variants": [
+      {
+        "src": "/assets/renaissance-exterior-640.webp",
+        "width": 640,
+        "bytes": 28968
+      },
+      {
+        "src": "/assets/renaissance-exterior-1000.webp",
+        "width": 1000,
+        "bytes": 54180
+      },
+      {
+        "src": "/assets/renaissance-exterior.webp",
+        "width": 1400,
+        "bytes": 95140
+      }
+    ]
+  }
+}

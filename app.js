@@ -5,6 +5,26 @@ const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const reduced = () => matchMedia('(prefers-reduced-motion:reduce)').matches;
 
+/* Load below-the-fold images near the viewport, including horizontal slides. */
+function loadImage(image) {
+  image.loading = 'eager';
+  if (image.dataset.srcset) image.srcset = image.dataset.srcset;
+  image.src = image.dataset.src;
+  image.removeAttribute('data-src');
+  image.removeAttribute('data-srcset');
+  image.removeAttribute('data-deferred-image');
+}
+if ('IntersectionObserver' in window) {
+  const imageObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    loadImage(entry.target);
+    imageObserver.unobserve(entry.target);
+  }), { rootMargin: '160px' });
+  $$('[data-deferred-image]').forEach(image => imageObserver.observe(image));
+} else {
+  $$('[data-deferred-image]').forEach(loadImage);
+}
+
 /* Header: mobile menu + active link */
 const toggle = document.getElementById('nav-toggle');
 const nav = document.getElementById('main-nav');
@@ -30,22 +50,30 @@ $$('.reveal').forEach((el, i) => { el.style.transitionDelay = `${(i % 4) * 70}ms
 /* Hero snow */
 const canvas = document.getElementById('snow');
 const ctx = canvas.getContext('2d');
-let flakes = [], W = 0, H = 0, heroVisible = true;
+let flakes = [], W = 0, H = 0, heroVisible = false, snowFrame = 0, lastSnowTime = 0;
 function sizeSnow() {
   const r = canvas.getBoundingClientRect(), d = Math.min(devicePixelRatio, 2);
   W = r.width; H = r.height; canvas.width = W * d; canvas.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0);
   flakes = Array.from({ length: Math.round(W / 10) }, () => ({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 2.2 + .6, s: Math.random() * .6 + .25, w: Math.random() * 6.28 }));
 }
 sizeSnow(); addEventListener('resize', sizeSnow);
-new IntersectionObserver(([entry]) => { heroVisible = entry.isIntersecting; }).observe(canvas);
-function snow() {
-  if (heroVisible) {
-    ctx.clearRect(0, 0, W, H); ctx.fillStyle = 'rgba(255,251,243,.85)';
-    for (const f of flakes) { f.y += f.s; f.w += .01; f.x += Math.sin(f.w) * .3; if (f.y > H + 4) { f.y = -4; f.x = Math.random() * W; } ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.283); ctx.fill(); }
-  }
-  requestAnimationFrame(snow);
+function updateSnow() {
+  const running = heroVisible && !document.hidden && !reduced();
+  if (running && !snowFrame) { lastSnowTime = 0; snowFrame = requestAnimationFrame(snow); }
+  if (!running && snowFrame) { cancelAnimationFrame(snowFrame); snowFrame = 0; }
+  if (reduced()) ctx.clearRect(0, 0, W, H);
 }
-if (!reduced()) snow();
+new IntersectionObserver(([entry]) => { heroVisible = entry.isIntersecting; updateSnow(); }).observe(canvas);
+document.addEventListener('visibilitychange', updateSnow);
+matchMedia('(prefers-reduced-motion:reduce)').addEventListener('change', updateSnow);
+function snow(time) {
+  snowFrame = requestAnimationFrame(snow);
+  if (lastSnowTime && time - lastSnowTime < 1000 / 30) return;
+  const step = lastSnowTime ? Math.min((time - lastSnowTime) / (1000 / 60), 3) : 1;
+  lastSnowTime = time;
+  ctx.clearRect(0, 0, W, H); ctx.fillStyle = 'rgba(255,251,243,.85)';
+  for (const f of flakes) { f.y += f.s * step; f.w += .01 * step; f.x += Math.sin(f.w) * .3 * step; if (f.y > H + 4) { f.y = -4; f.x = Math.random() * W; } ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.283); ctx.fill(); }
+}
 
 /* Lightbox: Christmas 2025 gallery cycles through the gallery photos; poster/programme open alone. */
 const imageDialog = document.getElementById('gallery-dialog');
@@ -58,7 +86,11 @@ function unlockScroll() { if (!document.querySelector('dialog[open]')) document.
 function displayImage(index) {
   activeIndex = (index + activeItems.length) % activeItems.length;
   const item = activeItems[activeIndex];
-  picture.hidden = false; picture.alt = item.dataset.galleryAlt || 'OrcheStars'; picture.src = item.dataset.gallerySrc;
+  picture.hidden = false; picture.alt = item.dataset.galleryAlt || 'OrcheStars';
+  picture.sizes = item.dataset.gallerySizes || '94vw';
+  if (item.dataset.gallerySrcset) picture.srcset = item.dataset.gallerySrcset;
+  else picture.removeAttribute('srcset');
+  picture.src = item.dataset.gallerySrc;
   caption.textContent = picture.alt + (activeItems.length > 1 ? ` / ${activeIndex + 1} of ${activeItems.length}` : '');
   $('#gallery-prev').hidden = $('#gallery-next').hidden = activeItems.length < 2;
 }
@@ -116,7 +148,11 @@ function updateBuyBar() {
   const show = hero.getBoundingClientRect().bottom < 0 && !inView(tickets) && !inView(footer);
   document.body.classList.toggle('show-mbuy', show); mBuy.setAttribute('aria-hidden', String(!show)); mBuy.inert = !show;
 }
-addEventListener('scroll', updateBuyBar, { passive: true }); updateBuyBar();
+let buyBarFrame = 0;
+addEventListener('scroll', () => {
+  if (buyBarFrame) return;
+  buyBarFrame = requestAnimationFrame(() => { buyBarFrame = 0; updateBuyBar(); });
+}, { passive: true }); updateBuyBar();
 
 
 /* 02 Hạng vé — tier selection drives the seat map, summary and CTA in each option. */
@@ -172,7 +208,14 @@ $('#tk-map-close').addEventListener('click', () => tkDialog.close());
 tkDialog.addEventListener('close', () => tkOpener?.focus({ preventScroll: true }));
 
 /* SVG viewBox zoom keeps the numbered original crisp, including pinch and drag. */
-const zoomSvg = $('.seat-map-original', tkDialogMap);
+let zoomSvg;
+function getZoomSvg() {
+  if (!zoomSvg) {
+    zoomSvg = $('.tk-map-button .seat-map-original').cloneNode(true);
+    tkDialogMap.append(zoomSvg);
+  }
+  return zoomSvg;
+}
 const mapBase = { x: -715, y: -25, width: 1430, height: 1050 };
 let mapScale = 1, mapX = mapBase.x, mapY = mapBase.y;
 const mapPointers = new Map();
@@ -180,7 +223,7 @@ function drawMapZoom() {
   const w = mapBase.width / mapScale, h = mapBase.height / mapScale;
   mapX = Math.max(mapBase.x, Math.min(mapX, mapBase.x + mapBase.width - w));
   mapY = Math.max(mapBase.y, Math.min(mapY, mapBase.y + mapBase.height - h));
-  zoomSvg.setAttribute('viewBox', `${mapX} ${mapY} ${w} ${h}`);
+  getZoomSvg().setAttribute('viewBox', `${mapX} ${mapY} ${w} ${h}`);
   $('[data-map-zoom="reset"]').textContent = `${Math.round(mapScale * 100)}%`;
   $('[data-map-zoom="out"]').disabled = mapScale <= 1;
   $('[data-map-zoom="in"]').disabled = mapScale >= 5;
@@ -198,7 +241,7 @@ function resetMapZoom() {
   mapScale = 1; mapX = mapBase.x; mapY = mapBase.y; mapPointers.clear(); drawMapZoom();
 }
 function mapPoint(x, y) {
-  return new DOMPoint(x, y).matrixTransform(zoomSvg.getScreenCTM().inverse());
+  return new DOMPoint(x, y).matrixTransform(getZoomSvg().getScreenCTM().inverse());
 }
 $$('[data-map-zoom]').forEach(button => button.addEventListener('click', () => {
   if (button.dataset.mapZoom === 'reset') resetMapZoom();
@@ -243,7 +286,12 @@ for (const [selector, itemSelector] of [['.acts', '.act'], ['.show-grid', '.show
  controls.className = 'carousel-controls';
  track.after(controls);
  let current = 0;
+ let updateFrame = 0;
  function update() {
+  if (updateFrame) return;
+  updateFrame = requestAnimationFrame(() => { updateFrame = 0; updateNow(); });
+ }
+ function updateNow() {
   const edge = track.getBoundingClientRect().left + track.clientWidth/2;
   const distance = item => { const r=item.getBoundingClientRect(); return Math.abs(r.left+r.width/2-edge); };
   current = items.reduce((best,item,i) => distance(item) < distance(items[best]) ? i : best,0);

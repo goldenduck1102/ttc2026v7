@@ -94,7 +94,8 @@ const TIER_ZONE = {
 };
 const orderedTiers = () => TIER_ORDER.map(key => TICKET_TIERS.find(tier => tier.key === key));
 
-const originalSeatMap = readFileSync(new URL('../public/assets/seating-map-v6.svg', import.meta.url), 'utf8');
+const originalSeatMap = readFileSync(new URL('../public/assets/seating-map-v6.svg', import.meta.url), 'utf8')
+  .replace(/(<image id="([^"]+)"[^>]*href=")data:image\/png;base64,[^"]+("[^>]*>)/g, '$1/assets/seatmap/$2.webp$3');
 function seatMapSvg() {
   return originalSeatMap
     .replace('<svg ', '<svg class="seat-map-original" role="img" aria-label="Sơ đồ khán phòng OrcheStars: số ghế, hàng ghế và các tầng 5–8" ')
@@ -128,6 +129,5 @@ function TicketOptionB() {
 }
 
 export function TicketOptions() {
-  const svg = seatMapSvg();
-  return `<section id="chon-ve" class="tk" aria-labelledby="lineup-title-b" data-option="b">${TicketOptionB()}<dialog class="tk-dialog" id="tk-map-dialog" aria-labelledby="tk-map-title"><div class="tk-dialog-head"><h3 id="tk-map-title">Sơ đồ khán phòng</h3><button type="button" class="lb-x" id="tk-map-close" aria-label="Đóng sơ đồ khán phòng">×</button></div><div class="tk-map-tools"><button type="button" data-map-zoom="out" aria-label="Thu nhỏ sơ đồ">−</button><button type="button" data-map-zoom="reset" aria-label="Hiện toàn bộ sơ đồ">100%</button><button type="button" data-map-zoom="in" aria-label="Phóng to sơ đồ">+</button></div><div class="tk-map-graphic tk-dialog-map" data-active="premium">${svg}</div><p class="tk-map-note">Sơ đồ tham khảo vị trí các khu vực. Tình trạng ghế được cập nhật tại trang đặt vé.</p></dialog></section>`;
+  return `<section id="chon-ve" class="tk" aria-labelledby="lineup-title-b" data-option="b">${TicketOptionB()}<dialog class="tk-dialog" id="tk-map-dialog" aria-labelledby="tk-map-title"><div class="tk-dialog-head"><h3 id="tk-map-title">Sơ đồ khán phòng</h3><button type="button" class="lb-x" id="tk-map-close" aria-label="Đóng sơ đồ khán phòng">×</button></div><div class="tk-map-tools"><button type="button" data-map-zoom="out" aria-label="Thu nhỏ sơ đồ">−</button><button type="button" data-map-zoom="reset" aria-label="Hiện toàn bộ sơ đồ">100%</button><button type="button" data-map-zoom="in" aria-label="Phóng to sơ đồ">+</button></div><div class="tk-map-graphic tk-dialog-map" data-active="premium"></div><p class="tk-map-note">Sơ đồ tham khảo vị trí các khu vực. Tình trạng ghế được cập nhật tại trang đặt vé.</p></dialog></section>`;
 }
