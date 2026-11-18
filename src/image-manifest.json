@@ -1,62 +1,62 @@
 {
   "/assets/ttc2026-banner.webp": {
-    "src": "/assets/ttc2026-banner.webp",
+    "src": "/assets/ttc2026-banner-20261118-2560.webp",
     "width": 2560,
     "height": 1440,
     "sizes": "(min-width: 1272px) 1240px, calc(100vw - 32px)",
     "variants": [
       {
-        "src": "/assets/ttc2026-banner-640.webp",
+        "src": "/assets/ttc2026-banner-20261118-640.webp",
         "width": 640,
-        "bytes": 38622
+        "bytes": 35416
       },
       {
-        "src": "/assets/ttc2026-banner-960.webp",
+        "src": "/assets/ttc2026-banner-20261118-960.webp",
         "width": 960,
-        "bytes": 71834
+        "bytes": 64760
       },
       {
-        "src": "/assets/ttc2026-banner-1280.webp",
+        "src": "/assets/ttc2026-banner-20261118-1280.webp",
         "width": 1280,
-        "bytes": 104740
+        "bytes": 94494
       },
       {
-        "src": "/assets/ttc2026-banner-1920.webp",
+        "src": "/assets/ttc2026-banner-20261118-1920.webp",
         "width": 1920,
-        "bytes": 192160
+        "bytes": 171878
       },
       {
-        "src": "/assets/ttc2026-banner.webp",
+        "src": "/assets/ttc2026-banner-20261118-2560.webp",
         "width": 2560,
-        "bytes": 255540
+        "bytes": 224240
       }
     ]
   },
   "/assets/ttc2026-poster.webp": {
-    "src": "/assets/ttc2026-poster-detail-2000.webp",
+    "src": "/assets/ttc2026-poster-20261118-2000.webp",
     "width": 2000,
     "height": 2500,
     "sizes": "(max-width: 480px) calc(100vw - 56px), (max-width: 980px) 416px, (min-width: 1232px) 428px, calc(40vw - 66px)",
     "variants": [
       {
-        "src": "/assets/ttc2026-poster-detail-800.webp",
+        "src": "/assets/ttc2026-poster-20261118-800.webp",
         "width": 800,
-        "bytes": 218030
+        "bytes": 158776
       },
       {
-        "src": "/assets/ttc2026-poster-detail-1280.webp",
+        "src": "/assets/ttc2026-poster-20261118-1280.webp",
         "width": 1280,
-        "bytes": 449106
+        "bytes": 260352
       },
       {
-        "src": "/assets/ttc2026-poster-detail-1600.webp",
+        "src": "/assets/ttc2026-poster-20261118-1600.webp",
         "width": 1600,
-        "bytes": 640630
+        "bytes": 355656
       },
       {
-        "src": "/assets/ttc2026-poster-detail-2000.webp",
+        "src": "/assets/ttc2026-poster-20261118-2000.webp",
         "width": 2000,
-        "bytes": 901520
+        "bytes": 505380
       }
     ]
   },
