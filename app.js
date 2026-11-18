@@ -121,6 +121,23 @@ document.querySelectorAll('dialog').forEach(dialog => {
   });
 });
 
+/* Early Bird opens at 70% scroll depth once per page load. */
+const earlyBirdDialog = $('#early-bird-dialog');
+function showEarlyBird() {
+  const page = document.scrollingElement;
+  const scrollableHeight = page.scrollHeight - page.clientHeight;
+  if (scrollableHeight <= 0 || page.scrollTop < scrollableHeight * 0.7 || $('dialog[open]')) return;
+  removeEventListener('scroll', showEarlyBird);
+  earlyBirdDialog.showModal();
+  lockScroll();
+}
+addEventListener('scroll', showEarlyBird, { passive: true });
+const [earlyBirdIntro, earlyBirdStatus] = $$('#early-bird-message span', earlyBirdDialog);
+$('.early-bird-claim', earlyBirdDialog).addEventListener('click', () => {
+  earlyBirdIntro.hidden = true;
+  earlyBirdStatus.hidden = false;
+});
+
 /* Count-up stats */
 const countObserver = new IntersectionObserver(entries => entries.forEach(entry => {
   if (!entry.isIntersecting) return;

@@ -736,6 +736,29 @@
       }
     ]
   },
+  "/assets/early-bird/early-bird-1086.webp": {
+    "src": "/assets/early-bird/early-bird-1086.webp",
+    "width": 1086,
+    "height": 1448,
+    "sizes": "(max-width: 640px) min(398px, calc(100vw - 26px)), (max-width: 792px) calc((100vw - 34px) * .5122), 388px",
+    "variants": [
+      {
+        "src": "/assets/early-bird/early-bird-400.webp",
+        "width": 400,
+        "bytes": 58894
+      },
+      {
+        "src": "/assets/early-bird/early-bird-800.webp",
+        "width": 800,
+        "bytes": 165892
+      },
+      {
+        "src": "/assets/early-bird/early-bird-1086.webp",
+        "width": 1086,
+        "bytes": 278674
+      }
+    ]
+  },
   "/assets/artists/children-choir.webp": {
     "src": "/assets/artists/children-choir-stage-1200.webp",
     "width": 1200,

@@ -1,6 +1,7 @@
 import { FAQ_ITEMS } from './content.mjs';
 
 const translations = {
+ 'ƯU ĐÃI ĐẶC BIỆT':'SPECIAL OFFER', 'EARLYBIRD GIẢM 15%':'EARLY BIRD 15% OFF', 'Đặc quyền dành cho những vị khách':'An exclusive offer for the first guests', 'đầu tiên xem thông tin sự kiện':'to explore the event.', 'Mã giảm giá sẽ được công bố khi mở bán.':'The discount code will be announced when tickets go on sale.', 'Nhận ưu đãi':'Claim offer', 'Đóng ưu đãi':'Close offer',
  'Đến nội dung chính':'Skip to content', 'Sự kiện':'Event', 'Hạng vé':'Tickets', 'Khoảnh khắc 2025':'2025 Gallery', 'Kí ức':'Memories', 'Địa điểm':'Venue', 'Hỏi đáp':'FAQ',
  'Mua vé':'Book tickets', 'Mua vé ngay':'Book now', 'Về đêm nhạc':'About the concert', 'Giao hưởng cổ điển & Âm nhạc đương đại':'Classical Symphony & Contemporary Music', 'Vé từ 200.000đ':'Tickets from 200,000₫',
  'Hãy cùng OrcheStars bước vào':'Join OrcheStars for',
