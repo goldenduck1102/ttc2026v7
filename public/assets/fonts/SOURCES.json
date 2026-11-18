@@ -1,0 +1,96 @@
+{
+  "description": "Unmodified WOFF2 files from the Google Fonts CSS API. Same families and outlines as the previous external stylesheet; Latin, Latin Extended and Vietnamese subsets, plus Google Sans symbols.",
+  "css_request": "https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap",
+  "files": [
+    {
+      "family": "Google Sans",
+      "style": "normal",
+      "subset": "symbols",
+      "source": "https://fonts.gstatic.com/s/googlesans/v76/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPlwUvbQoi-Entw.woff2",
+      "file": "google-sans-normal-symbols.woff2",
+      "bytes": 20488,
+      "sha256": "f397cb4a90e49e0bdbc0f0f7c834ac829e22fce6bce4b58a74ab94a57dc8e46b"
+    },
+    {
+      "family": "Google Sans",
+      "style": "normal",
+      "subset": "vietnamese",
+      "source": "https://fonts.gstatic.com/s/googlesans/v76/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPj0UvbQoi-Entw.woff2",
+      "file": "google-sans-normal-vietnamese.woff2",
+      "bytes": 8544,
+      "sha256": "d53e32d85667b4c6b9399a5ddb619546095667ee1446824eed6e08199bd73941"
+    },
+    {
+      "family": "Google Sans",
+      "style": "normal",
+      "subset": "latin-ext",
+      "source": "https://fonts.gstatic.com/s/googlesans/v76/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjwUvbQoi-Entw.woff2",
+      "file": "google-sans-normal-latin-ext.woff2",
+      "bytes": 21568,
+      "sha256": "17db488bd66fba0f14aae4d5731a80ba64094e1ba5373df89e4700393b7c6547"
+    },
+    {
+      "family": "Google Sans",
+      "style": "normal",
+      "subset": "latin",
+      "source": "https://fonts.gstatic.com/s/googlesans/v76/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjIUvbQoi-E.woff2",
+      "file": "google-sans-normal-latin.woff2",
+      "bytes": 35984,
+      "sha256": "215cc18cf3c463e59219e851b705583d77198ab8c5fb79bd8fd2cdd579ad6bd8"
+    },
+    {
+      "family": "Playfair Display",
+      "style": "italic",
+      "subset": "vietnamese",
+      "source": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojUk7yRZrPJ-M.woff2",
+      "file": "playfair-display-italic-vietnamese.woff2",
+      "bytes": 9548,
+      "sha256": "35a2bab58d032302776e37f54b9ce932bb07fa3139751053a374ba54f1b494f9"
+    },
+    {
+      "family": "Playfair Display",
+      "style": "italic",
+      "subset": "latin-ext",
+      "source": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojEk7yRZrPJ-M.woff2",
+      "file": "playfair-display-italic-latin-ext.woff2",
+      "bytes": 23332,
+      "sha256": "4d6a56168573c731f483ecfbaa468d38a674be49335160476bfa1eaf7c399fbb"
+    },
+    {
+      "family": "Playfair Display",
+      "style": "italic",
+      "subset": "latin",
+      "source": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnogkk7yRZrPA.woff2",
+      "file": "playfair-display-italic-latin.woff2",
+      "bytes": 38888,
+      "sha256": "c68530044e7c4ce6cd3c1c239d0a93be71af53821574714f83e1380d8b393d14"
+    },
+    {
+      "family": "Playfair Display",
+      "style": "normal",
+      "subset": "vietnamese",
+      "source": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgEM86xRbPQ.woff2",
+      "file": "playfair-display-normal-vietnamese.woff2",
+      "bytes": 9056,
+      "sha256": "8fa67d5f0ab2a1d0b924729a0411a069b384d7a236edd96a6767ef342a6d048f"
+    },
+    {
+      "family": "Playfair Display",
+      "style": "normal",
+      "subset": "latin-ext",
+      "source": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgEM86xRbPQ.woff2",
+      "file": "playfair-display-normal-latin-ext.woff2",
+      "bytes": 20980,
+      "sha256": "5628567856d60d714e7a35bcac9e3de08b336d63b12138f61b970990a1ee9547"
+    },
+    {
+      "family": "Playfair Display",
+      "style": "normal",
+      "subset": "latin",
+      "source": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2",
+      "file": "playfair-display-normal-latin.woff2",
+      "bytes": 38460,
+      "sha256": "5d91eb5d522a03081946c44c8ca17c902230dfed5f0f9b5014262135d47b15b2"
+    }
+  ]
+}
