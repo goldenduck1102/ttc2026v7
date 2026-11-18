@@ -737,22 +737,26 @@
     ]
   },
   "/assets/artists/children-choir.webp": {
-    "src": "/assets/artists/children-choir-detail-1800.webp",
-    "width": 1800,
-    "height": 1200,
+    "src": "/assets/artists/children-choir-stage-1200.webp",
+    "width": 1200,
+    "height": 897,
     "sizes": "(max-width: 700px) calc(100vw - 32px), (min-width: 1232px) 384px, calc((100vw - 80px) / 3)",
     "variants": [
       {
-        "src": "/assets/artists/children-choir-detail-1200.webp",
-        "width": 1200,
-        "bytes": 141158
+        "src": "/assets/artists/children-choir-stage-480.webp",
+        "width": 480,
+        "bytes": 20312
       },
       {
-        "src": "/assets/artists/children-choir-detail-1800.webp",
-        "width": 1800,
-        "bytes": 229280
+        "src": "/assets/artists/children-choir-stage-800.webp",
+        "width": 800,
+        "bytes": 39928
+      },
+      {
+        "src": "/assets/artists/children-choir-stage-1200.webp",
+        "width": 1200,
+        "bytes": 70664
       }
-    ],
-    "coverRatio": 0.75
+    ]
   }
 }
