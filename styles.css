@@ -273,6 +273,35 @@ section { position: relative; }
 @media (max-width: 700px) { .faq-list summary { font-size: 20px; padding: 18px; } .faq-list details > div { padding: 0 18px 18px; } }
 
 /* Final CTA */
+.sponsors {
+  --sponsor-bg: #000;
+  padding-block: clamp(42px, 5vw, 68px);
+  background: var(--sponsor-bg);
+  color: #fff;
+  text-align: center;
+  scroll-margin-top: 72px;
+}
+.sponsors h2 { font-size: clamp(28px, 3.3vw, 44px); }
+.sponsor-logos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  max-width: 960px;
+  margin: 28px auto 0;
+  padding: 0;
+  list-style: none;
+  background: color-mix(in srgb, currentColor 22%, var(--sponsor-bg));
+}
+.sponsor-logos li {
+  display: grid;
+  place-items: center;
+  min-height: 100px;
+  padding: 12px clamp(12px, 2vw, 24px);
+  background: var(--sponsor-bg);
+}
+.sponsor-logos img { display: block; width: auto; height: auto; max-width: min(100%, 168px); max-height: 72px; filter: brightness(0) invert(1); }
+@media (max-width: 700px) { .sponsor-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
 .final { padding: 40px 0 130px; text-align: center; }
 .count { display: flex; justify-content: center; gap: 14px; margin: 28px 0 40px; }
 .count div { background: var(--ink); color: var(--snow); border-radius: 18px; padding: 14px 0; width: 96px; }
