@@ -22,7 +22,7 @@ const translations = {
 const faqEnglish = [
  ['Is the concert suitable for children?', 'Families and young children are welcome. Children aged 3 and above need their own ticket. Children under 3 may sit on an adult’s lap.'],
  ['How do I book tickets and choose seats?', 'Explore the ticket tiers and seat map here, then select “Book now” to choose your showtime and seats and complete your booking on OrcheStars.'],
- ['What time should I arrive?', 'Check-in starts at 16:45 for the 17:30–19:00 show and 18:45 for the 19:30–21:00 show. Please arrive at least 30 minutes early. Check-in closes at 17:45 and 19:45 respectively.'],
+ ['What time should I arrive?', 'Check-in starts at 16:45 for the 17:30–19:00 show and 19:15 for the 20:00–21:30 show. Please arrive at least 30 minutes early. Check-in closes at 17:45 and 20:15 respectively.'],
  ['What should I bring for check-in?', 'Please present the email with your official e-ticket sent by OrcheStars. Screenshots or photographs of tickets are not accepted.'],
  ['Can I exchange or refund my ticket?', 'Under the event terms, purchased tickets cannot be exchanged, returned, transferred or refunded. Please check your date and showtime carefully before paying.'],
  ['May I take photos or record videos?', 'Professional video equipment, livestreaming and flash photography are not permitted during the performance. Please follow the organisers’ guidance and respect other audience members.'],
