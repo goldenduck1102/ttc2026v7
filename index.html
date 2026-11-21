@@ -51,20 +51,41 @@
       </div>
       <div class="fact reveal"><dt class="fact-label">Thời gian</dt><dd class="fact-shows"><div class="fact-show"><span>Suất 1</span><strong><time datetime="17:30">17:30</time>–<time datetime="19:00">19:00</time></strong></div><div class="fact-show"><span>Suất 2</span><strong><time datetime="20:00">20:00</time>–<time datetime="21:30">21:30</time></strong></div></dd></div>
       <div class="fact reveal"><dt class="fact-label">Địa điểm</dt><dd><strong>Renaissance Riverside</strong><span>8–15 Tôn Đức Thắng, Phường Sài Gòn, TP. Hồ Chí Minh</span></dd></div>
-      <div class="fact reveal"><dt class="fact-label">Các hạng vé &amp; Giá vé</dt><dd><strong>Standing, Eco, Premium, First Class</strong><span class="fact-price">Từ 200,000 VNĐ</span></dd></div>
+      <div class="fact reveal"><dt class="fact-label">Các hạng vé &amp; Giá vé</dt><dd><strong>Platinum, Diamond, Gold, Silver, Student</strong><span class="fact-price">Từ 200,000 VNĐ</span></dd></div>
     </dl>
-    <div class="acts">
+    <div class="acts" id="nghe-si">
       <figure class="act reveal">
         <div class="act-photo"><img src="/assets/artists/phu-son.webp" alt="Nguyễn Phú Sơn" loading="lazy"></div>
-        <figcaption class="act-body"><h3><span class="act-role">Nhạc trưởng</span> Nguyễn Phú Sơn</h3><p>Tốt nghiệp thạc sĩ chỉ huy tại Nhạc viện Mannheim (Đức), anh từng là nhạc trưởng khách mời của Dàn nhạc Giao hưởng Quốc gia Việt Nam và Dàn nhạc Giao hưởng Hà Nội.</p></figcaption>
+        <figcaption class="act-body">
+          <span class="act-role">Nhạc trưởng</span>
+          <h3 id="name-son">Nguyễn Phú Sơn</h3>
+          <p>Thạc sĩ chỉ huy tại Mannheim và đồng sáng lập Maestoso Vietnam.</p>
+          <button class="act-open" type="button" data-open="bio-son" aria-haspopup="dialog" aria-controls="bio-son" aria-labelledby="action-son name-son">
+            <span id="action-son">Xem hồ sơ</span>
+          </button>
+        </figcaption>
       </figure>
       <figure class="act reveal">
         <div class="act-photo"><img src="/assets/artists/craig.webp" alt="Craig Haggart" loading="lazy"></div>
-        <figcaption class="act-body"><h3><span class="act-role">Nhạc trưởng</span> Craig Haggart</h3><p>Giám đốc nghệ thuật của Dàn Hợp xướng và Dàn nhạc Quốc tế TP.HCM, anh phụ trách hợp xướng tại OrcheStars và từng lưu diễn quốc tế cùng Hans Zimmer.</p></figcaption>
+        <figcaption class="act-body">
+          <span class="act-role">Nhạc trưởng</span>
+          <h3 id="name-craig">Craig Haggart</h3>
+          <p>Phụ trách hợp xướng OrcheStars, từng lưu diễn cùng Hans Zimmer.</p>
+          <button class="act-open" type="button" data-open="bio-craig" aria-haspopup="dialog" aria-controls="bio-craig" aria-labelledby="action-craig name-craig">
+            <span id="action-craig">Xem hồ sơ</span>
+          </button>
+        </figcaption>
       </figure>
       <figure class="act reveal">
-        <div class="act-photo"><img src="/assets/artists/children-choir.webp" alt="OrcheStars Children’s Choir" loading="lazy"></div>
-        <figcaption class="act-body"><h3>OrcheStars Children’s Choir</h3><p>OrcheStars Children’s Choir là dàn hợp xướng thiếu nhi gồm những tài năng nhí yêu âm nhạc, được đào tạo bài bản về thanh nhạc và kỹ năng biểu diễn, mang đến những tiết mục giàu cảm xúc và sắc màu tươi mới cho đêm Giáng Sinh.</p></figcaption>
+        <div class="act-photo"><img src="/assets/artists/choir-concert.webp" alt="OrcheStars Children’s Choir" loading="lazy"></div>
+        <figcaption class="act-body">
+          <span class="act-role">Hợp xướng thiếu nhi</span>
+          <h3 id="name-choir">OrcheStars Children’s Choir</h3>
+          <p>Các giọng ca nhí kể chuyện Giáng Sinh cùng dàn nhạc.</p>
+          <button class="act-open" type="button" data-open="bio-choir" aria-haspopup="dialog" aria-controls="bio-choir" aria-labelledby="action-choir name-choir">
+            <span id="action-choir">Xem hồ sơ</span>
+          </button>
+        </figcaption>
       </figure>
     </div>
   </div>
@@ -116,7 +137,7 @@
       <p>Thông tin để cả nhà yên tâm tận hưởng đêm nhạc.</p>
       <a class="help-card" href="tel:+84906502925"><span class="help-ic"><ui-icon name="phone"></ui-icon></span><span><small>Cần thêm hỗ trợ?</small><strong>0906 502 925</strong></span></a>
     </div>
-    <div class="faq-answers reveal"><ui-faq-list></ui-faq-list><a class="link-arrow" href="https://orchestars.vn/events/ttc2026#ed-info" target="_blank" rel="noopener">Xem đầy đủ thông tin và điều khoản sự kiện ↗</a></div>
+    <div class="faq-answers reveal"><ui-faq-list></ui-faq-list><a class="link-arrow" href="https://www.orchestars.vn/events/ttc26#ed-info" target="_blank" rel="noopener">Xem đầy đủ thông tin và điều khoản sự kiện ↗</a></div>
   </div>
 </section>
 
@@ -147,6 +168,93 @@
 
 <dialog id="gallery-dialog" class="lb" aria-label="Xem ảnh" aria-describedby="gallery-caption"><button class="lb-x" id="gallery-close" aria-label="Đóng ảnh">×</button><img id="gallery-image" alt="" width="1200" height="800"><div class="lb-bar"><button id="gallery-prev" aria-label="Ảnh trước">←</button><p id="gallery-caption"></p><button id="gallery-next" aria-label="Ảnh tiếp theo">→</button></div></dialog>
 <dialog id="venue-dialog" class="info-dialog" aria-labelledby="venue-title"><button class="lb-x dialog-close" data-close aria-label="Đóng địa điểm">×</button><p class="kicker kicker-red">Điểm hẹn · Sài Gòn</p><h2 class="display" id="venue-title">Renaissance <em>Riverside.</em></h2><p>8–15 Tôn Đức Thắng, Phường Sài Gòn, TP. Hồ Chí Minh.</p><div class="venue-media"><figure><img src="/assets/renaissance-exterior.jpg" alt="Khách sạn Renaissance Riverside Sài Gòn bên sông Sài Gòn lúc chạng vạng" loading="lazy"><figcaption><a href="https://www.marriott.com/en-us/hotels/sgnbr-renaissance-riverside-hotel-saigon/photos/" target="_blank" rel="noopener">Ảnh: Marriott</a></figcaption></figure><iframe title="Bản đồ Renaissance Riverside Hotel Saigon" data-src="https://www.google.com/maps?q=Renaissance+Riverside+Hotel+Saigon+8-15+Ton+Duc+Thang&amp;output=embed" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="checkins checkins-ink"><div><span>Suất 1</span><strong class="show-range">17:30–19:00</strong></div><div><span>Suất 2</span><strong class="show-range">20:00–21:30</strong></div></div><p class="dialog-note">Áp dụng cho cả hai ngày 19 &amp; 20/12/2026. Bạn nên có mặt trước giờ diễn ít nhất 30 phút.</p></dialog>
+<dialog id="bio-son" class="info-dialog bio-dialog" aria-labelledby="bio-son-title">
+  <header class="bio-header">
+    <p class="kicker kicker-red">Nhạc trưởng</p>
+    <h2 id="bio-son-title">Nguyễn Phú Sơn</h2>
+    <button class="lb-x" type="button" data-close aria-label="Đóng hồ sơ" autofocus>×</button>
+  </header>
+  <div class="bio-copy" tabindex="0">
+    <img class="bio-photo" alt="Nguyễn Phú Sơn" loading="lazy" src="/assets/artists/son-conducting-1120.webp">
+    <p class="bio-lead">Những buổi học piano ở Hà Nội là khởi đầu của Nguyễn Phú Sơn. Với Maestoso Vietnam, nhóm anh đồng sáng lập, khán giả có thể gặp anh trên bục chỉ huy, bên cây piano hoặc đàn clavecin. Anh đảm nhiệm cả ba vai trò qua những chương trình trải từ hòa nhạc Baroque trong nhà thờ đến âm nhạc đương đại.</p>
+    <h3>Từ bản giao hưởng đầu tay đến Mannheim</h3>
+    <p>Sau những năm học piano với nghệ sĩ Trịnh Hồng Trang, Phú Sơn theo chuyên ngành sáng tác tại Học viện Âm nhạc Quốc gia Việt Nam. Bản Giao hưởng số 1 mang về cho anh điểm tốt nghiệp 10/10. Năm 2015, anh sang Đức học chỉ huy tại Nhạc viện Mannheim với Klaus Arp và sau đó là Stefan Blunier. Anh cũng theo học đàn clavecin và thực hành biểu diễn theo phong cách lịch sử với Miklós Spányi.</p>
+    <p>Sau ba năm chỉ huy và biểu diễn tại Việt Nam, anh trở lại Mannheim để học cao học với Blunier và hoàn thành chương trình vào năm 2024. Anh đạt điểm thi tốt nghiệp 1,0 ở cả hai bậc học và đứng đầu hệ cao học với điểm toàn khóa 1,1. Tại châu Âu, anh đã làm việc với các dàn nhạc như Württembergische Philharmonie Reutlingen và Deutsche Staatsphilharmonie Rheinland-Pfalz, cũng như Nhà hát Opera Quốc gia Plovdiv tại Bulgaria.</p>
+    <h3>Từ sân khấu Hồ Gươm đến lớp học chỉ huy</h3>
+    <p>Tại Việt Nam, Phú Sơn là nhạc trưởng khách mời thường niên của Dàn nhạc Giao hưởng Hà Nội và Dàn nhạc Giao hưởng Quốc gia Việt Nam. Năm 2023, anh đồng tổ chức Liên hoan Âm nhạc Quốc tế Maestoso tại Johor Bahru và chỉ huy ba buổi hòa nhạc. Năm sau, anh lần đầu chỉ huy ballet Hồ Thiên Nga cùng Nhà hát Nhạc Vũ Kịch Việt Nam tại Nhà hát Hồ Gươm. Tháng 10/2025, anh tiếp tục với hai đêm opera La Traviata.</p>
+    <p>Năm 2026, anh cùng Dàn nhạc Thính phòng Trẻ Nhạc viện TP.HCM biểu diễn tại Moskva và Sochi, đồng thời có lần đầu cộng tác với Sun Symphony Orchestra trong vai trò nghệ sĩ clavecin khách mời. Từ tháng 9, anh giảng dạy chuyên ngành chỉ huy dàn nhạc tại Học viện Âm nhạc Quốc gia Việt Nam. Anh vẫn sáng tác cho piano, clavecin và các nhóm hòa tấu, đôi khi viết riêng một tác phẩm để tặng bạn bè hoặc người thân.</p>
+  </div>
+</dialog>
+
+<dialog id="bio-craig" class="info-dialog bio-dialog" aria-labelledby="bio-craig-title">
+  <header class="bio-header">
+    <p class="kicker kicker-red">Nhạc trưởng</p>
+    <h2 id="bio-craig-title">Craig Haggart</h2>
+    <button class="lb-x" type="button" data-close aria-label="Đóng hồ sơ" autofocus>×</button>
+  </header>
+  <div class="bio-copy" tabindex="0">
+    <img class="bio-photo" alt="Craig Haggart" loading="lazy" src="/assets/artists/craig-orchestra.webp">
+    <p class="bio-lead">Craig Haggart từng hát nhạc phim của Hans Zimmer trong một chuyến lưu diễn quốc tế, đệm đàn cho ca sĩ trong phòng tập nhạc kịch và đứng trên bục chỉ huy tại TP. Hồ Chí Minh. Ở OrcheStars, anh phụ trách dàn hợp xướng.</p>
+    <h3>Từ hợp xướng Scotland đến sân khấu Anh</h3>
+    <p>Là cựu thành viên Hợp xướng Thanh niên Quốc gia Scotland, Craig từng biểu diễn tại nhiều phòng hòa nhạc ở Vương quốc Anh, trên BBC Radio và truyền hình quốc gia. Anh góp mặt trong vở The Divide của The Old Vic tại Liên hoan Quốc tế Edinburgh. Tại Liên hoan Lammermuir, anh đảm nhiệm cả hướng dẫn thanh nhạc lẫn đệm đàn cho vở opera Noye’s Fludde của Benjamin Britten.</p>
+    <h3>Trên bục chỉ huy tại TP. Hồ Chí Minh</h3>
+    <p>Craig là Giám đốc nghệ thuật của Dàn Hợp xướng và Dàn nhạc Quốc tế TP.HCM, đồng thời phụ trách dàn nhạc tại International School Ho Chi Minh City. Trong chương trình City2City kết nối TP. Hồ Chí Minh và Liverpool, anh chỉ huy dàn hợp xướng và dàn nhạc trong một dự án hợp tác với Royal Liverpool Philharmonic Orchestra.</p>
+    <h3>Từ phòng tập đến sân khấu nhạc kịch</h3>
+    <p>Trong phòng tập, Craig làm việc cùng ca sĩ với vai trò huấn luyện viên thanh nhạc và nghệ sĩ đệm đàn. Anh tham gia đưa bản dựng Broadway đầu tiên của Shrek: The Musical tại Việt Nam đến Hà Nội. Ở TP. Hồ Chí Minh, anh đệm đàn cho các vở như Legally Blonde, RENT và Mamma Mia! cùng Impact Theatre Saigon. Anh cũng từng hát độc tấu trong chương trình La La Land cùng Imagine Philharmonic Orchestra và trình diễn tập ca khúc Let Us Garlands Bring của Gerald Finzi tại Đà Lạt.</p>
+  </div>
+</dialog>
+
+<dialog id="bio-choir" class="info-dialog bio-dialog" aria-labelledby="bio-choir-title">
+  <header class="bio-header">
+    <p class="kicker kicker-red">Hợp xướng thiếu nhi</p>
+    <h2 id="bio-choir-title">OrcheStars Children’s Choir</h2>
+    <button class="lb-x" type="button" data-close aria-label="Đóng hồ sơ" autofocus>×</button>
+  </header>
+  <div class="bio-copy" tabindex="0">
+    <img class="bio-photo" alt="OrcheStars Children’s Choir" loading="lazy" src="/assets/artists/choir-stage-1320.webp">
+    <p class="bio-lead">Để hát cùng nhau, trước hết các em học cách lắng nghe. Tại OrcheStars Children’s Choir, các bạn nhỏ ở TP. Hồ Chí Minh rèn kỹ thuật thanh nhạc và tập hòa giọng trong một tập thể. Đến với A Tale of Two Christmases 2026, các em sẽ cùng dàn nhạc OrcheStars kể chuyện Giáng Sinh bằng tiếng hát.</p>
+    <h3>Tổng quan</h3>
+    <p>Dàn Hợp xướng Thiếu nhi OrcheStars (OCC) là chương trình âm nhạc kết nối trẻ em qua ca hát. Chương trình nuôi dưỡng tình yêu âm nhạc và giúp các em xây dựng nền tảng thanh nhạc vững chắc từ sớm.</p>
+    <p>Bên cạnh việc đào tạo âm nhạc, OCC xây dựng một cộng đồng nơi các em làm quen với bạn mới, tham gia những hoạt động cộng đồng ý nghĩa và chia sẻ niềm vui ca hát. Qua đó, các em phát triển cả về nghệ thuật lẫn kỹ năng xã hội.</p>
+    <h3>Tầm nhìn &amp; mục đích</h3>
+    <p>OCC được xây dựng trên niềm tin rằng âm nhạc là ngôn ngữ toàn cầu kết nối mọi người. Thông qua hát hợp xướng, OCC hướng tới bốn mục tiêu.</p>
+    <ol>
+      <li>Phát triển tình yêu âm nhạc trong mỗi trẻ nhỏ.</li>
+      <li>Xây dựng sự tự tin, tinh thần đồng đội và những tình bạn bền chặt.</li>
+      <li>Phát triển các kỹ năng thanh nhạc và âm nhạc bài bản từ sớm.</li>
+      <li>Giúp âm nhạc hợp xướng và thính phòng trở nên gần gũi, hấp dẫn hơn với thế hệ trẻ.</li>
+    </ol>
+    <h3>Phương pháp tiếp cận</h3>
+    <p>Lộ trình giảng dạy của OCC kết hợp việc học với các hoạt động thú vị để các em luôn hào hứng trong quá trình luyện tập.</p>
+    <ol>
+      <li>Tham gia trò chơi âm nhạc tương tác để cảm nhận nhịp điệu, cao độ và rèn kỹ năng lắng nghe.</li>
+      <li>Làm quen với nhiều tác phẩm, từ các bản nhạc cổ điển đến những bài hát phổ biến.</li>
+      <li>Rèn kỹ thuật thanh nhạc qua cách lấy hơi, phát âm, nhả chữ và tạo cộng hưởng âm thanh.</li>
+      <li>Tập hát nhóm để học cách phối hợp nhịp nhàng với nhau.</li>
+    </ol>
+    <p>Phương pháp này giúp các em phát triển kỹ năng thanh nhạc một cách tự nhiên và vui vẻ, đồng thời xây dựng mối liên kết tích cực với âm nhạc.</p>
+    <h3>Cấu trúc chương trình</h3>
+    <ol>
+      <li>Mỗi khóa học gồm 15 buổi, mỗi buổi kéo dài 1 giờ.</li>
+      <li>OCC tổ chức hai đợt tuyển sinh mỗi năm.</li>
+      <li>Mỗi khóa tiếp nhận tối đa 30 học viên để xây dựng một cộng đồng hợp xướng năng động và gắn kết.</li>
+    </ol>
+    <h3>Từ phòng tập đến sân khấu</h3>
+    <p>Năm 2026, OCC tổ chức hai khóa hợp xướng thiếu nhi. Ở cả hai khóa, các em được hướng dẫn kỹ thuật thanh nhạc, tập hòa giọng cùng nhau và chuẩn bị cho các buổi biểu diễn.</p>
+    <h4>Khóa mùa Xuân 2026</h4>
+    <p>Các em tham gia buổi hòa nhạc đặc biệt kỷ niệm 30 năm của ICO và chương trình Special, Special Afternoon Tea tại khách sạn 5 sao Renaissance Riverside Hotel Saigon.</p>
+    <h4>Khóa mùa Hè–Thu 2026</h4>
+    <p>Tại AHI Halloween Bazaar ngày 31/10/2026, các em bước lên sân khấu trong trang phục hóa trang và hát ba ca khúc trước bạn bè, gia đình và khách tham dự lễ hội của Anne Hill International School. Ảnh và video của buổi diễn có trong album OCC Summer-Fall trên fanpage của dàn hợp xướng.</p>
+    <h3>Về OrcheStars</h3>
+    <p>OrcheStars là công ty âm nhạc tại Việt Nam, tập trung vào các buổi biểu diễn giao hưởng và dàn nhạc. Sứ mệnh của OrcheStars là làm cho âm nhạc cổ điển trở nên dễ tiếp cận và hấp dẫn hơn với công chúng, đặc biệt tại TP. Hồ Chí Minh.</p>
+    <p>Qua các chương trình sáng tạo, nghệ thuật kể chuyện trên sân khấu và sự hợp tác với các nghệ sĩ tài năng, OrcheStars giúp khán giả trải nghiệm vẻ đẹp vượt thời gian của âm nhạc giao hưởng qua những buổi biểu diễn trực tiếp.</p>
+    <p>OrcheStars cũng xây dựng những sân chơi bổ ích để các bạn nhỏ có cơ hội tiếp cận môi trường âm nhạc giao hưởng chuyên nghiệp.</p>
+    <p><strong>Ươm mầm tài năng trẻ, gắn kết bằng âm nhạc.</strong></p>
+    <h3>Liên hệ OrcheStars</h3><p>675–677 Điện Biên Phủ, phường Thạnh Mỹ Tây, TP. Hồ Chí Minh</p><p>Hotline OrcheStars · <a href="tel:+84906502925">0906 502 925</a><br>Điện thoại trên fanpage · <a href="tel:+84941720075">094 172 00 75</a><br><a href="mailto:info@orchestars.vn">info@orchestars.vn</a></p>
+    <nav class="profile-links"><a href="https://www.facebook.com/media/set/?vanity=ochchildrenschoir&amp;set=a.122192278388977363" target="_blank" rel="noopener">Xem album biểu diễn</a><a href="https://www.facebook.com/ochchildrenschoir" target="_blank" rel="noopener">Facebook ↗</a></nav>
+  </div>
+</dialog>
+
 <dialog id="early-bird-dialog" class="early-bird" aria-labelledby="early-bird-title" aria-describedby="early-bird-message">
   <button class="lb-x" type="button" data-close aria-label="Đóng ưu đãi" autofocus>×</button>
   <figure class="early-bird-art">

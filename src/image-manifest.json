@@ -60,6 +60,52 @@
       }
     ]
   },
+  "/assets/artists/son-conducting-1120.webp": {
+    "src": "/assets/artists/son-conducting-1120.webp",
+    "width": 1120,
+    "height": 747,
+    "sizes": "(max-width: 500px) calc(100vw - 75px), (max-width: 642px) calc(92vw - 35px), 555px",
+    "variants": [
+      {
+        "src": "/assets/artists/son-conducting-640.webp",
+        "width": 640,
+        "bytes": 23620
+      },
+      {
+        "src": "/assets/artists/son-conducting-960.webp",
+        "width": 960,
+        "bytes": 38228
+      },
+      {
+        "src": "/assets/artists/son-conducting-1120.webp",
+        "width": 1120,
+        "bytes": 47154
+      }
+    ]
+  },
+  "/assets/artists/choir-stage-1320.webp": {
+    "src": "/assets/artists/choir-stage-1320.webp",
+    "width": 1320,
+    "height": 503,
+    "sizes": "(max-width: 500px) calc(100vw - 75px), (max-width: 772px) calc(92vw - 35px), 658px",
+    "variants": [
+      {
+        "src": "/assets/artists/choir-stage-672.webp",
+        "width": 672,
+        "bytes": 44406
+      },
+      {
+        "src": "/assets/artists/choir-stage-960.webp",
+        "width": 960,
+        "bytes": 75900
+      },
+      {
+        "src": "/assets/artists/choir-stage-1320.webp",
+        "width": 1320,
+        "bytes": 116384
+      }
+    ]
+  },
   "/assets/artists/phu-son.webp": {
     "src": "/assets/artists/phu-son-detail-1365.webp",
     "width": 1365,

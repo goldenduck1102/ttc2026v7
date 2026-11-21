@@ -108,7 +108,9 @@ picture.addEventListener('error', () => { picture.hidden = true; caption.textCon
 
 document.querySelectorAll('[data-open]').forEach(button => button.addEventListener('click', () => {
   const dialog = document.getElementById(button.dataset.open);
+  button.focus({ preventScroll: true });
   dialog.showModal(); lockScroll();
+  dialog.querySelector('.bio-copy')?.scrollTo({ top: 0, behavior: 'instant' });
   const frame = dialog.querySelector('iframe[data-src]'); if (frame && !frame.src) frame.src = frame.dataset.src;
 }));
 document.querySelectorAll('dialog').forEach(dialog => {
@@ -180,6 +182,16 @@ let tkOpener = null;
 $$('.tk-opt').forEach(option => {
   const form = $('form', option);
   const map = $('.tk-map-graphic', option);
+  const benefitFilter = $('.benefits-filter select', option);
+  function showBenefitTier(key) {
+    if (!benefitFilter) return;
+    benefitFilter.value = key || '';
+    option.querySelector('.benefits table').classList.toggle('mobile-tier-hidden', !key);
+    for (const cell of option.querySelectorAll('.benefits tr > :not(:first-child)')) {
+      cell.classList.toggle('mobile-tier-hidden', !cell.classList.contains('col-' + key));
+    }
+  }
+  benefitFilter?.addEventListener('change', () => showBenefitTier(benefitFilter.value));
   let selectedTier = new FormData(form).get(`tier-${option.dataset.tkOption}`);
   function selectTier() {
     const tier = TICKET_TIERS.find(item => item.key === new FormData(form).get(`tier-${option.dataset.tkOption}`));
@@ -204,13 +216,16 @@ $$('.tk-opt').forEach(option => {
     input.checked = !clear;
     selectedTier = clear ? null : input.value;
     map.dataset.focus = selectedTier || '';
+    showBenefitTier(selectedTier);
     selectTier();
   });
   form.addEventListener('change', () => {
     selectedTier = new FormData(form).get(`tier-${option.dataset.tkOption}`);
     map.dataset.focus = selectedTier || '';
+    showBenefitTier(selectedTier);
     selectTier();
   });
+  showBenefitTier(selectedTier);
   document.addEventListener('languagechange', selectTier);
   form.addEventListener('submit', event => event.preventDefault());
   $('[data-map-open]', option).addEventListener('click', event => {
@@ -330,3 +345,97 @@ for (const [selector, itemSelector] of [['.acts', '.act'], ['.show-grid', '.show
  track.addEventListener('scroll',update,{passive:true}); addEventListener('resize',update); update();
 }
 new IntersectionObserver(([entry]) => ticketSection.classList.toggle('is-in-view',entry.isIntersecting),{threshold: .1}).observe(ticketSection);
+
+let activeInfo = null;
+let pinnedInfo = false;
+let closeTimer;
+const detailFor = button => document.getElementById(button.getAttribute('aria-controls'));
+
+function positionDetail() {
+  if (!activeInfo) return;
+  const anchor = activeInfo.getBoundingClientRect();
+  const popup = detailFor(activeInfo);
+  const space = 8;
+  const left = Math.min(innerWidth - popup.offsetWidth - space,
+    Math.max(space, anchor.left + (anchor.width - popup.offsetWidth) / 2));
+  const below = anchor.bottom + space;
+  popup.style.left = left + 'px';
+  popup.style.top = (below + popup.offsetHeight <= innerHeight - space
+    ? below : Math.max(space, anchor.top - popup.offsetHeight - space)) + 'px';
+}
+
+function closeDetail() {
+  clearTimeout(closeTimer);
+  if (!activeInfo) return;
+  detailFor(activeInfo).hidePopover();
+  activeInfo.setAttribute('aria-expanded', 'false');
+  activeInfo = null;
+  pinnedInfo = false;
+}
+
+function openDetail(button) {
+  clearTimeout(closeTimer);
+  if (button === activeInfo) return;
+  closeDetail();
+  activeInfo = button;
+  detailFor(button).showPopover();
+  button.setAttribute('aria-expanded', 'true');
+  positionDetail();
+}
+
+function scheduleClose() {
+  if (!pinnedInfo) closeTimer = setTimeout(closeDetail, 180);
+}
+
+for (const button of document.querySelectorAll('.benefit-info')) {
+  const popup = detailFor(button);
+  button.addEventListener('pointerenter', event => {
+    if (event.pointerType === 'mouse') openDetail(button);
+  });
+  button.addEventListener('pointerleave', scheduleClose);
+  popup.addEventListener('pointerenter', () => clearTimeout(closeTimer));
+  popup.addEventListener('pointerleave', scheduleClose);
+  button.addEventListener('focus', () => {
+    if (button.matches(':focus-visible')) openDetail(button);
+  });
+  button.addEventListener('blur', () => {
+    if (activeInfo === button) closeDetail();
+  });
+  button.addEventListener('click', () => {
+    if (activeInfo === button && pinnedInfo) return closeDetail();
+    openDetail(button);
+    pinnedInfo = true;
+  });
+}
+document.addEventListener('pointerdown', event => {
+  if (activeInfo && !activeInfo.contains(event.target) && !detailFor(activeInfo).contains(event.target)) closeDetail();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeDetail();
+});
+window.addEventListener('resize', positionDetail);
+document.addEventListener('scroll', () => {
+  if (!activeInfo) return;
+  const anchor = activeInfo.getBoundingClientRect();
+  if (anchor.bottom <= 0 || anchor.top >= innerHeight) closeDetail();
+  else positionDetail();
+}, true);
+
+// Mobile benefits: tier tabs and "Chọn" buttons.
+document.querySelectorAll('.bm').forEach(bm => {
+  bm.addEventListener('click', event => {
+    const tab = event.target.closest('[data-bm-tab]');
+    if (tab) {
+      bm.querySelectorAll('[data-bm-tab]').forEach(b => b.setAttribute('aria-pressed', String(b === tab)));
+      bm.querySelectorAll('[data-bm-panel]').forEach(p => { p.hidden = p.dataset.bmPanel !== tab.dataset.bmTab; });
+      return;
+    }
+    const pick = event.target.closest('[data-bm-pick]');
+    if (!pick) return;
+    const input = document.querySelector(`#chon-ve form input[type="radio"][value="${pick.dataset.bmPick}"]`);
+    if (!input) return;
+    input.checked = true;
+    input.dispatchEvent(new Event('change', { bubbles: true }));
+    (document.querySelector('#chon-ve .tk-buy') || input).scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+  });
+});

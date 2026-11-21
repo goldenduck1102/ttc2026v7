@@ -28,34 +28,11 @@ export const FAQ_ITEMS = [
 ];
 
 export const TICKET_TIERS = [
-  {
-    "name": "Standing",
-    "price": "200.000",
-    "kind": "Vé đứng",
-    "key": "standing",
-    "marker": "standing"
-  },
-  {
-    "name": "Eco",
-    "price": "800.000",
-    "kind": "Vé ngồi",
-    "key": "eco",
-    "marker": "eco"
-  },
-  {
-    "name": "Premium",
-    "price": "1.200.000",
-    "kind": "Vé ngồi",
-    "key": "premium",
-    "marker": "premium"
-  },
-  {
-    "name": "First Class",
-    "price": "1.800.000",
-    "kind": "Vé ngồi",
-    "key": "first",
-    "marker": "first"
-  }
+  { key: 'platinum', name: 'Platinum', price: '2.900.000', kind: 'Vé ngồi', color: '#00798F' },
+  { key: 'diamond', name: 'Diamond', price: '1.900.000', kind: 'Vé ngồi', color: '#E8432F' },
+  { key: 'gold', name: 'Gold', price: '1.200.000', kind: 'Vé ngồi', color: '#FAC41E' },
+  { key: 'silver', name: 'Silver', price: '800.000', kind: 'Vé ngồi', color: '#3D8BF4' },
+  { key: 'student', name: 'Student', price: '200.000', kind: 'Vé đứng', color: '#85B35B' },
 ];
 
 export const PROGRAMMES = [

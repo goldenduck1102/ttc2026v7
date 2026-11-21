@@ -151,13 +151,18 @@ section { position: relative; }
 .fact-show > span { margin: 0; font-size: 13px; white-space: nowrap; }
 .fact-show > strong { margin: 0; white-space: nowrap; font-variant-numeric: lining-nums tabular-nums; }
 .acts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 96px; }
-.act { min-width: 0; border-radius: var(--r-lg); overflow: hidden; background: #28080a; color: var(--snow); }
-.act-photo { position: relative; overflow: hidden; aspect-ratio: 4 / 3; }
+.act { position: relative; display: flex; flex-direction: column; min-width: 0; border-radius: var(--r-lg); overflow: hidden; background: #28080a; color: var(--snow); }
+.act-photo { position: relative; overflow: hidden; aspect-ratio: 4 / 3; flex: none; }
 .act-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 38%; }
-.act-body { padding: clamp(16px, 2vw, 24px); }
+.act-body { display: flex; flex: 1; flex-direction: column; padding: clamp(16px, 2vw, 24px); }
 .act-role { display: block; margin-bottom: 4px; font: 600 13px/1.3 var(--font-body); color: var(--gold-soft); }
-.act h3 { font-size: clamp(21px, 2.5vw, 32px); line-height: 1.1; font-weight: 700; text-wrap: balance; }
-.act p { font-size: 15px; line-height: 1.5; opacity: .88; margin-top: 8px; }
+.act h3 { font-size: 24px; line-height: 1.1; font-weight: 700; text-wrap: balance; }
+.act p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; font-size: 15px; line-height: 1.5; opacity: .88; margin: 8px 0 16px; }
+.act-open { display: inline-flex; align-items: center; align-self: flex-start; gap: 8px; min-height: 44px; margin-top: auto; padding: 8px 16px; border-radius: var(--radius-pill); background: #fff; color: var(--ink); font-weight: 700; font-size: 14px; }
+.act-open::before { content: ''; position: absolute; inset: 0; }
+@media (hover: hover) { .act-open:hover { background: var(--gold-soft); } }
+.act-open:focus-visible { outline: none; }
+.act-open:focus-visible::before { outline: 3px solid var(--gold-soft); outline-offset: -4px; border-radius: var(--r-lg); }
 @media (max-width: 980px) { .about-grid { grid-template-columns: 1fr; gap: 56px; } .poster-card { width: min(100%, 440px); margin-inline: auto; } .facts { --fact-value-size: 24px; grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 700px) {
   .about-lead { font-size: clamp(28px, 8.1vw, 56px); }
@@ -473,8 +478,6 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
 .tcard-top i { width: 14px; height: 14px; border-radius: 4px; background: var(--tier); flex: none; }
 .tcard-price { font: 700 40px/1.05 var(--font-heading); margin-top: 6px; font-variant-numeric: tabular-nums; }
 .tcard-price small { font-size: 22px; margin-left: 2px; }
-.tcard-zone { margin-top: auto; padding-top: 14px; border-top: 1.5px dashed color-mix(in srgb, var(--ink) 28%, transparent); font-size: 13px; line-height: 1.45; color: var(--ink-2); }
-.tcard-zone b { color: var(--ink); }
 .tcard:has(input:checked) { background: var(--gold-soft); box-shadow: inset 0 0 0 3px var(--gold); }
 .tcard:has(input:checked)::after { content: "Đang chọn"; position: absolute; top: 18px; right: 18px; background: var(--red); color: var(--snow); border-radius: var(--radius-pill); padding: 4px 10px; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 .tcard:has(input:focus-visible) { outline: 3px solid var(--gold-soft); outline-offset: 4px; }
@@ -490,7 +493,6 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
   .tcard-top { font-size: 12px; letter-spacing: .04em; }
   .tcard-price { font-size: 28px; }
   .tcard-price small { font-size: 17px; }
-  .tcard-zone { font-size: 12px; }
   .tcard:has(input:checked)::after { display: none; }
   .tk-mapcard { padding: 10px; }
 }
@@ -513,14 +515,13 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
 .tk-b { padding: 100px 0; }
 .tk-b::before, .tk-b::after { content: none; }
 .tk-b .tk-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-.tk-b .tk-mapcard { position: static; width: min(100%, 900px); justify-self: center; padding: 24px; border-radius: 20px; background: var(--paper); box-shadow: none; border: 1px solid var(--gold-soft); }
+.tk-b .tk-mapcard { position: static; width: min(100%, 900px); justify-self: center; padding: 24px; border-radius: 20px; background: #fff; box-shadow: none; border: 0; }
 .tk-b .tk-map-button { background: transparent; }
 .tk-b .tk-legend { margin-top: 16px; }
 .tk-b .tk-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-.tk-b .tcard { min-height: 218px; padding: 24px 20px; border-radius: 16px; background: var(--paper); border: 2px solid transparent; mask: none; -webkit-mask: none; }
+.tk-b .tcard { min-height: 0; padding: 24px 20px; border-radius: 16px; background: var(--paper); border: 2px solid transparent; mask: none; -webkit-mask: none; }
 .tk-b .tcard-top { font-size: 13px; }
 .tk-b .tcard-price { font-size: 36px; margin-top: 12px; }
-.tk-b .tcard-zone { border-top-style: solid; }
 .tk-b .tcard:has(input:checked) { border-color: var(--gold); background: var(--gold-soft); box-shadow: none; }
 .tk-b .tcard:has(input:checked)::after { content: none; }
 .tk-b .tk-buy { justify-self: center; gap: 32px; padding: 12px 0 0; }
@@ -550,10 +551,9 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
   .tk-b .tk-map-graphic svg { max-height: 430px; margin-inline: auto; width: auto; max-width: 100%; }
   .tk-b .tk-legend { margin-top: 10px; }
   .tk-b .tk-cards { grid-area: cards; grid-template-columns: 1fr; gap: 10px; }
-  .tk-b .tcard { min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 16px; row-gap: 4px; align-items: center; padding: 14px 18px; }
+  .tk-b .tcard { min-height: 68px; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 16px; align-items: center; padding: 14px 18px; }
   .tk-b .tcard-top { grid-column: 1; font-size: 13px; }
-  .tk-b .tcard-zone { grid-column: 1; grid-row: 2; margin: 0; padding: 0; border: 0; font-size: 12px; }
-  .tk-b .tcard-price { grid-column: 2; grid-row: 1 / 3; margin: 0; padding-right: 22px; font-size: 30px; }
+  .tk-b .tcard-price { grid-column: 2; grid-row: 1; margin: 0; padding-right: 22px; font-size: 30px; }
   .tk-b .tcard-price small { font-size: 18px; }
   .tk-b .tcard:has(input:checked)::after { top: 50%; right: 12px; transform: translateY(-50%); }
   .tk-b .tk-buy { grid-area: buy; justify-self: stretch; justify-content: space-between; gap: 16px; padding: 14px 14px 14px 20px; border-radius: 20px; background: rgba(0, 0, 0, .2); }
@@ -561,8 +561,8 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
   .tk-b .tk-note { grid-area: note; text-align: left; font-size: 13px; }
 }
 
-/* Original numbered venue map, unchanged from the V6 source. */
-.seat-map-original { display: block; width: 100%; height: auto; background: #fffdf6; }
+/* Numbered seating chart for TTC26. */
+.seat-map-original { display: block; width: 100%; height: auto; background: #fff; }
 .tk-map-button { overflow: hidden; }
 .tk-dialog { width: min(1450px, 96vw); background: #fffdf6; }
 .tk-dialog-head { position: sticky; top: -20px; z-index: 2; padding: 12px 0; background: #fffdf6; }
@@ -660,7 +660,6 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
  .tk-b .tcard { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 5px 10px; min-height: 80px; padding: 13px 14px; text-align: left; }
  .tk-b .tcard-top { font-size: 12px; grid-column: 1; }
  .tk-b .tcard-price { grid-column: 2; grid-row: 1; font-size: 25px; margin: 0; }
- .tk-b .tcard-zone { grid-column: 1 / -1; margin: 0; padding: 0; border: 0; font-size: 11px; line-height: 1.4; }
  .tk-b .tk-buy { width: 100%; display: grid; grid-template-columns: 1fr; gap: 12px; padding: 16px; border-radius: 16px; background: #0003; }
  .tk-b .tk-sum { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; }
  .tk-b .tk-sum small { width: 100%; font-size: 9px; margin: 0; }
@@ -703,6 +702,7 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
 @media (max-width: 700px) {
  .about-grid .about-copy { text-align: left; }
  .act-body { text-align: center; }
+ .act-open { align-self: center; }
  .carousel-controls { gap: 0; flex-wrap: wrap; }
  .carousel-controls .carousel-dot { width: 24px; height: 32px; padding: 0; border: 0; border-radius: 0; display: grid; place-items: center; opacity: 1; }
  .carousel-dot::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: currentColor; opacity: .25; transition: width .2s, opacity .2s; }
@@ -764,12 +764,13 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
 .tk-b .tcard-top { font-family: var(--font-heading); font-size: 26px; font-weight: 700; line-height: 1.1; letter-spacing: 0; }
 @media (max-width: 700px) { .tk-b .tcard-top { font-size: 23px; } }
 
-/* Keep the original numbered map; isolate a tier on click, toggle back to all. */
+/* Isolate the selected tier and show all tiers when the selection is cleared. */
 .tk-map-graphic[data-focus]:not([data-focus=""]) .seat-zone { opacity: .14; }
-.tk-map-graphic[data-focus="first"] .seat-zone[data-tier="first"],
-.tk-map-graphic[data-focus="premium"] .seat-zone[data-tier="premium"],
-.tk-map-graphic[data-focus="eco"] .seat-zone[data-tier="eco"],
-.tk-map-graphic[data-focus="standing"] .seat-zone[data-tier="standing"] { opacity: 1; }
+.tk-map-graphic[data-focus="platinum"] .seat-zone[data-tier="platinum"],
+.tk-map-graphic[data-focus="diamond"] .seat-zone[data-tier="diamond"],
+.tk-map-graphic[data-focus="gold"] .seat-zone[data-tier="gold"],
+.tk-map-graphic[data-focus="silver"] .seat-zone[data-tier="silver"],
+.tk-map-graphic[data-focus="student"] .seat-zone[data-tier="student"] { opacity: 1; }
 .tk-zoom { display: inline-flex; align-items: center; gap: 8px; padding: 6px 7px 6px 12px; }
 .tk-zoom-plus { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border: 1px solid currentColor; border-radius: 50%; font-size: 19px; line-height: 1; }
 
@@ -792,7 +793,6 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
 }
 
 /* Compact phone ticket rows, with the map directly below showtimes. */
-.tcard-kind { display: none; }
 @media (max-width: 700px) {
  .tk-b .tk-head h2 { font-size: clamp(18px, 5.5vw, 25px); white-space: nowrap; line-height: 1.2; letter-spacing: -.025em; }
  .tk-b .tk-mapcard { order: 0; }
@@ -800,15 +800,15 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
  .tk-b .tcard { min-height: 56px; grid-template-columns: minmax(0, 1fr) auto; align-items: center; padding: 12px; gap: 8px; }
  .tk-b .tcard-top { font-size: 20px; gap: 6px; white-space: nowrap; }
  .tk-b .tcard-top i { width: 10px; height: 10px; border-radius: 3px; }
- .tk-b .tcard-kind { display: none; }
- .tk-b .tcard-zone { display: none; }
  .tk-b .tcard-price, .tk-b .tk-sum span { font-family: var(--font-heading); font-size: 20px; font-weight: 700; line-height: 1.1; white-space: nowrap; }
  .tk-b .tcard-price small { font-size: 13px; }
 }
 
 /* A compact corner magnifier, with interactive zoom inside the dialog. */
 .tk .tk-zoom { position: absolute; right: 8px; bottom: 8px; width: 36px; height: 36px; padding: 0; margin: 0; justify-content: center; border-radius: 50%; }
-.tk .tk-zoom-plus { border: 0; width: 100%; height: 100%; font-size: 25px; }
+.tk .tk-zoom-plus { position: relative; border: 0; width: 100%; height: 100%; }
+.tk-zoom-plus::before, .tk-zoom-plus::after { content: ""; position: absolute; inset: 0; margin: auto; width: 14px; height: 2px; background: currentColor; }
+.tk-zoom-plus::after { transform: rotate(90deg); }
 .tk-b .tk-map-button { position: relative; }
 .tk .tk-sum[hidden] { display: none; }
 .tk-map-tools { flex: 0 0 auto; display: flex; justify-content: center; gap: 8px; padding: 0 0 8px; }
@@ -826,4 +826,157 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
 @media (min-width: 1600px) {
   .final h2 { max-width: 1200px; }
   .final h2 em { display: block; }
+}
+
+/* ===== Benefits table — one paper ticket, perforated price row ===== */
+.benefits { position: relative; margin-top: clamp(48px, 6vw, 88px); }
+.benefits h3 { margin: 0 0 24px; color: var(--snow); font: 700 clamp(30px, 4vw, 48px)/1.08 var(--font-heading); letter-spacing: -.01em; }
+.benefits-scroll { position: relative; overflow-x: auto; background: #fff; color: var(--ink); border-radius: var(--r-lg); padding: 10px 14px 16px; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .6); }
+.benefits-scroll:focus-visible { outline: 3px solid var(--gold-soft); outline-offset: 4px; }
+.benefits table { width: 100%; min-width: 820px; border-spacing: 0; table-layout: fixed; font-size: 15px; line-height: 1.4; font-variant-numeric: tabular-nums; }
+.benefits th, .benefits td { padding: 14px 12px; text-align: center; vertical-align: middle; border-bottom: 1px solid color-mix(in srgb, var(--ink) 12%, transparent); }
+.benefits tr > :not(:last-child) { border-right: 1px solid color-mix(in srgb, var(--ink) 12%, transparent); }
+.benefits tbody tr:last-child > * { border-bottom: 0; }
+.benefits th:first-child { position: sticky; left: 0; z-index: 1; width: 235px; white-space: nowrap; text-align: left; background: #fff; }
+.benefits thead th { padding-block: 10px 6px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); border-bottom: 0; }
+.benefits thead th:first-child { color: var(--ink-2); }
+.benefits tbody th { font-weight: 600; color: var(--ink-2); }
+.benefits-dot { display: inline-block; width: 10px; height: 10px; margin-right: 8px; border-radius: 3px; background: var(--tier); vertical-align: 1px; }
+.benefit-check { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--pine); color: var(--snow); font-size: 14px; font-weight: 700; line-height: 1; }
+.benefits td [aria-hidden=true]:not(.benefit-check) { color: color-mix(in srgb, var(--ink) 30%, transparent); }
+/* Upsell: lift the two top tiers, quiet the rest (Platinum framed in gold, Diamond tinted). */
+.benefits-name { display: block; }
+.benefits td.is-featured { font-weight: 600; }
+.benefits ul { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; margin: 24px 0 0; padding: 0; list-style: none; color: color-mix(in srgb, var(--snow) 82%, transparent); font-size: 14px; line-height: 1.55; }
+.benefits li { position: relative; padding-left: 20px; }
+.benefits li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 7px; height: 7px; border-radius: 2px; background: var(--gold); transform: rotate(45deg); }
+
+@media (max-width: 700px) {
+  .benefits th:first-child { width: 195px; padding-inline: 8px; }
+  .benefits table { min-width: 785px; font-size: 14px; }
+  .benefits ul { grid-template-columns: 1fr; }
+  .benefits-scroll { padding: 6px 8px 16px; border-radius: var(--r-md); }
+  .tk-b .tcard-top { white-space: normal; }
+}
+
+.bio-dialog { --bio-gutter: clamp(20px, 4vw, 40px); width: min(740px, calc(100% - 32px)); max-height: min(84dvh, 780px); padding: 0; overflow: hidden; }
+.bio-dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
+.bio-header { position: relative; padding: 24px max(var(--bio-gutter), 72px) 20px var(--bio-gutter); border-bottom: 1px solid rgba(23, 18, 14, .15); }
+.bio-header h2 { font-size: clamp(25px, 4vw, 44px); line-height: 1.1; margin: 8px 0 0; }
+.bio-copy { overflow: auto; overscroll-behavior: contain; padding: 24px var(--bio-gutter) var(--bio-gutter); overflow-wrap: break-word; }
+.bio-copy:focus-visible { outline-offset: -3px; }
+.bio-photo { display: block; margin: 0 auto 30px; max-height: 370px; max-width: 100%; border-radius: 12px; }
+#bio-son .bio-photo { width: 555px; aspect-ratio: 1120 / 747; }
+#bio-choir .bio-photo { aspect-ratio: 1320 / 503; }
+.bio-copy h3 { font: 700 clamp(21px,2.4vw,28px)/1.22 var(--font-heading); margin: 28px 0 10px; }
+.bio-copy h3:first-child { margin-top: 0; }
+.bio-copy p, .bio-copy ol { font-size: 16px; line-height: 1.72; margin: 10px 0; }
+.bio-copy ol { padding-inline-start: 1.5em; }
+.bio-copy li + li { margin-top: 6px; }
+.bio-copy .bio-lead { font-size: 17px; font-weight: 500; }
+.bio-copy a { color: #812531; text-decoration: underline; text-underline-offset: 3px; }
+.profile-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+
+.benefits .benefit-row:nth-child(odd) > * { background: #f3f3f2; }
+.benefits .benefit-row:nth-child(even) > * { background: #fff; }
+.benefit-label { display: flex; align-items: center; justify-content: space-between; gap: 4px; }
+.benefit-info { flex: none; width: 28px; height: 28px; display: grid; place-content: center; background: transparent; color: var(--ink-2); }
+.benefit-info > span:first-child { display: grid; place-items: center; width: 17px; height: 17px; border: 1px solid currentColor; border-radius: 50%; font: bold 12px/1 Georgia, serif; }
+.benefit-info:hover, .benefit-info[aria-expanded="true"] { color: var(--pine); }
+.benefits th:first-child { width: 260px; }
+@media (max-width: 700px) {
+  .benefits th:first-child { width: 215px; white-space: normal; }
+}
+
+.benefit-detail {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  box-sizing: border-box;
+  width: min(300px, calc(100vw - 24px));
+  padding: 14px 16px;
+  border: 1px solid #d8d2cb;
+  border-radius: 12px;
+  background: white;
+  color: var(--ink);
+  box-shadow: 0 6px 24px #281b1829;
+  white-space: normal;
+  text-align: left;
+  font: 400 14px/1.5 var(--font-body);
+}
+
+.benefits thead th { vertical-align: middle; padding-block: 14px; border-bottom: 1px solid #dedbd7; }
+.benefits-amount { display: block; margin-top: 6px; font: 700 clamp(17px, 1.8vw, 26px)/1.15 var(--font-heading); letter-spacing: 0; text-transform: none; white-space: nowrap; }
+.tier-heading { grid-column: 1; min-width: 0; }
+.ticket-note { display: block; margin: 4px 0 0 24px; font: 600 12px/1.3 var(--font-body); color: var(--ink-2); }
+@media (max-width:700px) {
+  .ticket-note { margin-left: 16px; }
+  .benefits thead th { padding-inline: 5px; }
+}
+
+.benefits-filter { display: none; }
+@media (max-width: 700px) {
+  .benefits-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 8px 12px;
+    border-bottom: 1px solid #dedbd7;
+    color: var(--ink-2);
+    font-weight: 600;
+  }
+  .benefits-filter select {
+    min-height: 44px;
+    padding: 0 12px;
+    border: 1px solid #d6d2cc;
+    border-radius: 10px;
+    background-color: #fff;
+    color: var(--ink);
+    font: inherit;
+  }
+  .benefits table { min-width: 0; }
+  .benefits .mobile-tier-hidden { display: none; }
+  .benefits th:first-child { width: 58%; position: static; }
+  .benefits .benefit-row > * { padding: 4px 8px; }
+  .benefits .benefit-label { min-height: 44px; }
+  .benefits .benefit-info { width: 44px; height: 44px; }
+  .benefits td { border-right: 0 !important; }
+}
+
+/* ===== Mobile benefits — tier tabs + one detail card (Diamond selected by default) ===== */
+.bm { display: none; }
+@media (max-width: 700px) {
+  .benefits:has(.bm) .benefits-scroll { display: none; }
+  .bm { display: block; color: var(--ink); }
+
+  /* shared pieces */
+  .benefits .bm ul { display: block; margin: 0; padding: 0; list-style: none; color: inherit; font-size: 14px; }
+  .benefits .bm li::before { content: none; }
+  .bm-head { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 2px 12px; }
+  .bm-name { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .bm-price { font: 700 24px/1.1 var(--font-heading); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .bm-kind { grid-column: 1; font-size: 12px; color: var(--ink-2); }
+  .bm-list li:nth-child(odd) { background: #f3f3f2; }
+  .bm-list li:nth-child(even) { background: #fff; }
+  .bm-list li { display: grid; grid-template-columns: 24px 1fr auto; align-items: center; gap: 10px; padding: 10px 8px; border-top: 1px solid #ece8e2; line-height: 1.35; }
+  .bm-tick { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 700; }
+  .bm-list .is-on .bm-tick { background: var(--pine); color: var(--snow); }
+  .bm-list .is-off { color: color-mix(in srgb, var(--ink) 38%, transparent); }
+  .bm-list .is-off .bm-tick { color: color-mix(in srgb, var(--ink) 30%, transparent); }
+  .bm-val { font-weight: 700; text-align: right; font-size: 13px; max-width: 120px; }
+  .bm-pick { width: 100%; min-height: 46px; margin-top: 14px; border-radius: var(--radius-pill); border: 1.5px solid color-mix(in srgb, var(--ink) 25%, transparent); color: var(--ink); font-size: 15px; font-weight: 700; }
+  .bm .is-featured .bm-pick { background: var(--ink); border-color: var(--ink); color: var(--snow); }
+  .bm .bm-diamond .bm-pick { background: var(--red); border-color: var(--red); }
+
+  .bm-tabs { display: flex; gap: 6px; overflow-x: auto; margin: 0 -16px 12px; padding: 2px 16px 4px; scrollbar-width: none; }
+  .bm-tabs::-webkit-scrollbar { display: none; }
+  .bm-tabs button { flex: none; display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: var(--radius-pill); background: color-mix(in srgb, var(--snow) 12%, transparent); color: var(--snow); font-size: 13px; font-weight: 700; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--snow) 30%, transparent); }
+  .bm-tabs button.is-featured { box-shadow: inset 0 0 0 1.5px var(--gold-soft); }
+  .bm-tabs button[aria-pressed=true] { background: #fff; color: var(--ink); box-shadow: none; }
+  .bm-panel { background: #fff; border-radius: var(--r-lg); padding: 18px 16px 16px; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .6); }
+  .bm-panel.bm-platinum { box-shadow: inset 0 0 0 2px var(--color-gold-deep), 0 30px 60px -30px rgba(0, 0, 0, .6); }
+  .bm-panel .bm-head { padding-bottom: 14px; margin-bottom: 2px; border-bottom: 2px dashed color-mix(in srgb, var(--ink) 22%, transparent); }
+  .bm-panel .bm-price { font-size: 28px; }
+  .bm-panel .bm-list li:first-child { border-top: 0; }
+
 }
