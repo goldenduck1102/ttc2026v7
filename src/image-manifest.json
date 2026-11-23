@@ -1,34 +1,24 @@
 {
   "/assets/ttc2026-banner.webp": {
-    "src": "/assets/ttc2026-banner-20261118-2560.webp",
-    "width": 2560,
-    "height": 1440,
+    "src": "/assets/ttc2026-banner-20261123-1280.webp",
+    "width": 1280,
+    "height": 720,
     "sizes": "(min-width: 1272px) 1240px, calc(100vw - 32px)",
     "variants": [
       {
-        "src": "/assets/ttc2026-banner-20261118-640.webp",
+        "src": "/assets/ttc2026-banner-20261123-640.webp",
         "width": 640,
-        "bytes": 35416
+        "bytes": 73222
       },
       {
-        "src": "/assets/ttc2026-banner-20261118-960.webp",
+        "src": "/assets/ttc2026-banner-20261123-960.webp",
         "width": 960,
-        "bytes": 64760
+        "bytes": 126758
       },
       {
-        "src": "/assets/ttc2026-banner-20261118-1280.webp",
+        "src": "/assets/ttc2026-banner-20261123-1280.webp",
         "width": 1280,
-        "bytes": 94494
-      },
-      {
-        "src": "/assets/ttc2026-banner-20261118-1920.webp",
-        "width": 1920,
-        "bytes": 171878
-      },
-      {
-        "src": "/assets/ttc2026-banner-20261118-2560.webp",
-        "width": 2560,
-        "bytes": 224240
+        "bytes": 152608
       }
     ]
   },

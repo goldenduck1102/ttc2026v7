@@ -110,13 +110,13 @@ function TicketBenefits() {
   const included = '<span class="benefit-check" aria-hidden="true">✓</span><span class="sr-only">Bao gồm</span>';
   const empty = '<span aria-hidden="true">—</span><span class="sr-only">Không bao gồm</span>';
   const rows = [
-    ['Nước uống (1 chai)', 'Mỗi khách có vé Silver, Gold, Diamond hoặc Platinum được tặng một chai nước uống kèm theo.', [true, true, true, true]],
-    ['Ưu đãi nội thất nanoHome', 'nanoHome mang đến nội thất cao cấp từ các thương hiệu nổi tiếng châu Âu, với nhiều thiết kế dành cho không gian sinh hoạt của gia đình.<br>Khi mua sắm tại nanoHome, khách Gold và Diamond được giảm 15%, khách Platinum được giảm 20%.', ['20%', '15%', '15%']],
-    ['Ưu đãi ẩm thực khách sạn', 'Thưởng thức ẩm thực tại Renaissance Riverside Hotel Saigon với voucher giảm 40% dành cho khách Gold, Diamond và Platinum.', ['40%', '40%', '40%']],
-    ['Quà tặng đêm nhạc', 'Mang một chút ngọt ngào của đêm Giáng Sinh về nhà. Khách Gold nhận một túi Cookie.<br>Với vé Diamond hoặc Platinum, món quà dành cho bạn là một túi Cookie hoặc Chocolate.', ['1 túi Cookie<br>hoặc Chocolate', '1 túi Cookie<br>hoặc Chocolate', '1 túi Cookie']],
-    ['Ưu tiên ghế & check-in', 'Khách Diamond và Platinum được ưu tiên vị trí ngồi và làm thủ tục vào cửa.', [true, true]],
+    ['Dining Experience\ntại Khách sạn 5 sao', 'Khách sạn 5 sao Renaissance Riverside Hotel Saigon chuẩn bị Set Menu thượng hạng dành cho bạn.', [true]],
     ['Chụp ảnh riêng', 'Khách Diamond và Platinum được ưu tiên chụp ảnh với nhiếp ảnh gia chuyên nghiệp của OrcheStars. Bạn có thể chụp riêng, cùng người thương hoặc cùng gia đình tại backdrop sự kiện được thiết kế và trang trí đặc biệt cho mùa Giáng sinh.', [true, true]],
-    ['Set Menu thượng hạng', 'Khách sạn 5 sao Renaissance Riverside Hotel Saigon chuẩn bị Set Menu thượng hạng dành cho bạn.', [true]],
+    ['Ưu tiên ghế & check-in', 'Khách Diamond và Platinum được ưu tiên vị trí ngồi và làm thủ tục vào cửa.', [true, true]],
+    ['Quà tặng đêm nhạc', 'Mang một chút ngọt ngào của đêm Giáng Sinh về nhà. Khách Gold nhận một túi Cookie.<br>Với vé Diamond hoặc Platinum, món quà dành cho bạn là một túi Cookie hoặc Chocolate.', ['Quà tặng Giáng sinh\nđặc biệt', 'Quà tặng Giáng sinh\nđặc biệt', 'Quà tặng Giáng sinh']],
+    ['Ưu đãi nội thất nanoHome', 'nanoHome mang đến nội thất cao cấp từ các thương hiệu nổi tiếng châu Âu, với nhiều thiết kế dành cho không gian sinh hoạt của gia đình.<br>Khi mua sắm tại nanoHome Gallery, khách giữ vé Platinum hoặc Diamond được giảm 20%, khách giữ vé Gold hoặc Silver được giảm 15%. Ưu đãi không áp dụng cho sản phẩm do bên thứ ba ký gửi và không áp dụng đồng thời với các chương trình khuyến mãi khác.', ['20%', '20%', '15%', '15%']],
+    ['Ưu đãi ẩm thực khách sạn', 'Thưởng thức ẩm thực tại Renaissance Riverside Hotel Saigon với voucher giảm 40% dành cho khách Gold, Diamond và Platinum.', ['40%', '40%', '40%']],
+    ['Nước uống (1 chai)', 'Mỗi khách có vé Silver, Gold, Diamond hoặc Platinum được tặng một chai nước uống kèm theo.', [true, true, true, true]],
   ];
   const columns = [...TICKET_TIERS.entries()].reverse();
   const tierOptions = columns.map(([, tier]) => `<option value="${tier.key}">${tier.name}</option>`).join('');

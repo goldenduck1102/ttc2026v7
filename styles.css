@@ -879,6 +879,7 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
 
 .benefits .benefit-row:nth-child(odd) > * { background: #f3f3f2; }
 .benefits .benefit-row:nth-child(even) > * { background: #fff; }
+.benefit-label > span, .benefit-row td, .bm-label, .bm-val { white-space: pre-line; }
 .benefit-label { display: flex; align-items: center; justify-content: space-between; gap: 4px; }
 .benefit-info { flex: none; width: 28px; height: 28px; display: grid; place-content: center; background: transparent; color: var(--ink-2); }
 .benefit-info > span:first-child { display: grid; place-items: center; width: 17px; height: 17px; border: 1px solid currentColor; border-radius: 50%; font: bold 12px/1 Georgia, serif; }
@@ -982,10 +983,4 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
 }
 
 html[lang="vi"] .bio-copy p[lang="en"], html[lang="en"] .bio-copy p[lang="vi"] { display: none; }
-.orchestra-gallery { width: min(100%, 555px); margin: 0 auto 24px; }
-.orchestra-slides { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; border-radius: 12px; scrollbar-width: none; }
-.orchestra-slides img { flex: 0 0 100%; width: 100%; min-width: 0; aspect-ratio: 3 / 2; object-fit: cover; scroll-snap-align: start; }
-.orchestra-slides .portrait-slide { object-fit: contain; }
-.orchestra-controls { display: flex; gap: 14px; align-items: center; justify-content: center; margin-top: 8px; }
-.orchestra-controls button { width: 44px; height: 44px; border-radius: 50%; font-size: 26px; background: var(--ink); color: var(--snow); }
-.orchestra-controls output { font-variant-numeric: tabular-nums; }
+#bio-orchestra .bio-photo { width: min(100%, 555px); height: auto; }

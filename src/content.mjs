@@ -57,11 +57,10 @@ export const PROGRAMMES = [
     "href": "https://www.orchestars.vn/events/aot-25"
   },
   {
-    "title": "Dear Ghibli, My Friend",
-    "eyebrow": "THE DREAM EXPRESS",
-    "image": "/assets/programmes/ghibli.jpg",
-    "portrait": true,
-    "backdrop": true
+    "title": "Christmassy 2024",
+    "eyebrow": "CHRISTMAS / 2024",
+    "image": "/assets/programmes/christmassy-2024.webp",
+    "href": "https://www.orchestars.vn/events/christmassy-15-12"
   }
 ];
 

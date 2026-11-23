@@ -125,11 +125,37 @@ document.querySelectorAll('dialog').forEach(dialog => {
 
 /* Early Bird opens at 70% scroll depth once per page load. */
 const earlyBirdDialog = $('#early-bird-dialog');
+const earlyBirdClaim = earlyBirdDialog.querySelector('.early-bird-claim');
+const claimDestination = earlyBirdClaim.href;
+const lastDay = earlyBirdDialog.querySelector('time').dateTime;
+const offerEndsAt = Date.parse(lastDay + 'T00:00:00+07:00') + 86400000;
+let expiryTimer;
+
+function updateEarlyBird() {
+  clearTimeout(expiryTimer);
+  const remaining = offerEndsAt - Date.now();
+  const expired = remaining <= 0;
+  earlyBirdClaim.firstElementChild.hidden = expired;
+  earlyBirdClaim.lastElementChild.hidden = !expired;
+  earlyBirdClaim.href = expired ? '#benefits-title' : claimDestination;
+  if (!expired) expiryTimer = setTimeout(updateEarlyBird, Math.min(remaining, 2147483647));
+}
+
+earlyBirdClaim.addEventListener('click', () => {
+  updateEarlyBird();
+  if (earlyBirdClaim.hash === '#benefits-title') earlyBirdDialog.close();
+});
+earlyBirdDialog.addEventListener('close', () => clearTimeout(expiryTimer));
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden && earlyBirdDialog.open) updateEarlyBird();
+});
+
 function showEarlyBird() {
   const page = document.scrollingElement;
   const scrollableHeight = page.scrollHeight - page.clientHeight;
   if (scrollableHeight <= 0 || page.scrollTop < scrollableHeight * 0.7 || $('dialog[open]')) return;
   removeEventListener('scroll', showEarlyBird);
+  updateEarlyBird();
   earlyBirdDialog.showModal();
   lockScroll();
 }
@@ -468,19 +494,4 @@ document.querySelectorAll('.bm').forEach(bm => {
     input.dispatchEvent(new Event('change', { bubbles: true }));
     (document.querySelector('#chon-ve .tk-buy') || input).scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
   });
-});
-
-const orchestraTrack = document.querySelector('.orchestra-slides');
-const orchestraControls = document.querySelector('.orchestra-controls');
-const photoCount = orchestraTrack.children.length;
-const photoIndex = () => Math.round(orchestraTrack.scrollLeft / orchestraTrack.clientWidth);
-orchestraControls.querySelectorAll('button').forEach((button, index) => {
-  const step = index === 0 ? -1 : 1;
-  button.addEventListener('click', () => {
-    const next = (photoIndex() + step + photoCount) % photoCount;
-    orchestraTrack.scrollLeft = next * orchestraTrack.clientWidth;
-  });
-});
-orchestraTrack.addEventListener('scroll', () => {
-  if (orchestraTrack.clientWidth) orchestraControls.querySelector('output').value = (photoIndex() + 1) + ' / ' + photoCount;
 });
