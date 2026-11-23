@@ -50,7 +50,6 @@ function attributes(source) {
 export function renderComponents(html) {
   return html
     .replaceAll('{{EVENT_NAME}}', escapeAttribute(EVENT_NAME))
-    .replaceAll('{{EVENT_HEADING}}', '<span class="about-title-line">A Tale Of</span><span class="about-title-line">Two Christmases</span>')
     .replaceAll('<ui-ticket-options></ui-ticket-options>', TicketOptions())
     .replaceAll('<ui-programmes></ui-programmes>', ProgrammePanels())
     .replaceAll('<ui-faq-list></ui-faq-list>', FaqList())

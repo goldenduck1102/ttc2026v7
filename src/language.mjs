@@ -1,6 +1,17 @@
 import { FAQ_ITEMS } from './content.mjs';
 
 const translations = {
+ "Ảnh trước": "Previous photo",
+ "Ảnh tiếp theo": "Next photo",
+ "Dàn nhạc giao hưởng quy tụ những nghệ sĩ tài năng, được đào tạo bài bản và sở hữu kinh nghiệm biểu diễn phong phú trên các sân khấu hòa nhạc chuyên nghiệp. Với nền tảng chuyên môn vững chắc, kỹ thuật trình tấu điêu luyện cùng khả năng diễn giải đa dạng các tác phẩm âm nhạc cổ điển, các nghệ sĩ mang đến sự kết hợp hài hòa giữa tính chuẩn xác trong diễn tấu và chiều sâu biểu cảm của nghệ thuật giao hưởng.": "The symphony orchestra brings together musicians with formal training and extensive experience on the concert stage. Their command of their instruments and the range of interpretations they bring to the classical repertoire give their performances both precision and expressive depth.",
+ "Đặc biệt, dàn nhạc có sự góp mặt của nhiều nghệ sĩ đã gắn bó lâu năm cùng OrcheStars, đồng hành trong những chương trình hòa nhạc thành công và được đông đảo khán giả đón nhận. Kinh nghiệm cộng tác qua nhiều chương trình tạo nên sự ăn ý, khả năng phối hợp nhuần nhuyễn và tính thống nhất trong trình diễn, góp phần duy trì chất lượng nghệ thuật và dấu ấn chuyên môn đặc trưng trong các chương trình hòa nhạc của OrcheStars.": "Many of the musicians have played with OrcheStars for years, appearing together in concerts warmly received by audiences. That shared experience can be heard in the way they listen and respond to one another, shaping the distinctive sound of an OrcheStars concert.",
+ "Nhạc trưởng | Nghệ sĩ Clavecin | Nhà soạn nhạc": "Conductor | Harpsichordist | Composer",
+ "Nghệ sĩ Thanh nhạc | Giám đốc Nghệ thuật | Chỉ huy Hợp xướng": "Vocalist | Artistic Director | Choral Conductor",
+ "Hòa tấu": "Ensemble",
+ "Dàn nhạc giao hưởng": "Symphony Orchestra",
+ "Nhiều nghệ sĩ trong dàn nhạc đã cùng OrcheStars biểu diễn qua nhiều mùa hòa nhạc.": "Many of these musicians have played together for several OrcheStars concert seasons.",
+ "Tìm hiểu thêm": "Learn more",
+ "Thu gọn": "Show less",
  "Chi tiết": "Details",
  "Khách sạn 5 sao Renaissance Riverside Hotel Saigon chuẩn bị Set Menu thượng hạng dành cho bạn.": "The five-star Renaissance Riverside Hotel Saigon prepares a premium set menu for you.",
  "Khách Diamond và Platinum được ưu tiên vị trí ngồi và làm thủ tục vào cửa.": "Diamond and Platinum guests receive preferred seating and priority check-in.",
@@ -36,16 +47,20 @@ const translations = {
  "Khách Platinum và Diamond có thể chụp ảnh gia đình, cặp đôi hoặc cá nhân tại khu chụp ảnh ở sảnh Việt Kitchen.": "Platinum and Diamond guests can take private family, couple or individual portraits at the photo booth in the Việt Kitchen lobby.",
  "Student là vé đứng dành cho học sinh, sinh viên tại tầng 8.": "Student tickets are for students in the standing area on floor 8."
 ,
- 'ƯU ĐÃI ĐẶC BIỆT':'SPECIAL OFFER', 'EARLYBIRD GIẢM 15%':'EARLY BIRD 15% OFF', 'Đặc quyền dành cho những vị khách':'An exclusive offer for the first guests', 'đầu tiên xem thông tin sự kiện':'to explore the event.', 'Mã giảm giá sẽ được công bố khi mở bán.':'The discount code will be announced when tickets go on sale.', 'Nhận ưu đãi':'Claim offer', 'Đóng ưu đãi':'Close offer',
+ 'ƯU ĐÃI ĐẶC BIỆT':'SPECIAL OFFER', 'EARLYBIRD GIẢM 15%':'EARLY BIRD 15% OFF', 'Đặc quyền dành cho những vị khách':'An exclusive offer for the first guests', 'đầu tiên xem thông tin sự kiện':'to explore the event.', 'Áp dụng ưu đãi':'Apply offer', 'Đóng ưu đãi':'Close offer',
  'Đến nội dung chính':'Skip to content', 'Sự kiện':'Event', 'Hạng vé':'Tickets', 'Khoảnh khắc 2025':'2025 Gallery', 'Kí ức':'Memories', 'Địa điểm':'Venue', 'Hỏi đáp':'FAQ',
  'Mua vé':'Book tickets', 'Mua vé ngay':'Book now', 'Về đêm nhạc':'About the concert', 'Giao hưởng cổ điển & Âm nhạc đương đại':'Classical Symphony & Contemporary Music', 'Vé từ 200.000đ':'Tickets from 200,000₫',
- 'Hãy cùng OrcheStars bước vào':'Join OrcheStars for',
- ', nơi hai sắc màu âm nhạc tưởng chừng đối lập cùng viết nên một câu chuyện Giáng Sinh nhiệm màu.':', where two seemingly different musical worlds come together to tell a magical Christmas story.',
- 'Một bên là vẻ đẹp vượt thời gian của giao hưởng cổ điển, du dương và sâu lắng. Bên còn lại là những thanh âm đương đại, mang hơi thở tươi mới và những bất ngờ đầy thú vị. Tựa như hai chương của một bản giao hưởng, mỗi bên đều mang một nét đẹp riêng, cùng tạo nên một đêm Giáng Sinh đầy mê hoặc và những khoảnh khắc đáng mong chờ.':'On one side is the timeless beauty of classical symphony, lyrical and moving. On the other are contemporary sounds, full of fresh energy and delightful surprises. Like two movements of a symphony, each has a character of its own. Together they make for an enchanting Christmas concert full of moments to look forward to.',
+ "Chương trình hòa nhạc Giáng sinh do OrcheStars sản xuất": "A Christmas concert produced by OrcheStars",
+ "Tiếp nối thành công của A Tale of Two Christmases 2025, với gần 1.000 khán giả và cả ba suất diễn đều cháy vé, OrcheStars chính thức trở lại cùng A TALE OF TWO CHRISTMASES 2026!": "In 2025, nearly 1,000 people joined us for A Tale of Two Christmases across three sold-out performances. This year, OrcheStars returns with A Tale of Two Christmases 2026!",
+ "Mùa Giáng sinh năm nay, một câu chuyện hoàn toàn mới sẽ được kể, đưa khán giả bước vào hai thế giới Giáng sinh đầy màu sắc và cảm xúc qua những giai điệu giao hưởng.": "This Christmas, the orchestra tells a new story, inviting you into two Christmas worlds alive with colour and emotion.",
+ "Từ vẻ đẹp vượt thời gian của những bản nhạc Giáng sinh cổ điển đến âm hưởng tươi mới, rộn ràng của âm nhạc đương đại, hai thế giới âm nhạc tưởng chừng khác biệt sẽ cùng giao thoa trên một sân khấu, tạo nên hành trình nghệ thuật đầy bất ngờ, cảm xúc và những khoảnh khắc diệu kỳ.": "Timeless Christmas classics share the stage with the bright, lively sounds of contemporary music. As these two musical worlds meet, expect surprising turns, stirring melodies and moments of Christmas magic.",
+ "Và phép màu Giáng sinh không chỉ dừng lại trên sân khấu!": "The Christmas magic continues beyond the stage!",
+ "Bên cạnh chương trình hòa nhạc, khán giả còn có cơ hội hòa mình vào không khí lễ hội với những hoạt động và trải nghiệm Giáng sinh thú vị tại khách sạn 5 sao Renaissance Riverside Saigon, ngay trung tâm Thành phố Hồ Chí Minh.": "Alongside the concert, enjoy festive activities and Christmas experiences at the five-star Renaissance Riverside Hotel Saigon in the heart of Ho Chi Minh City.",
+ "Hãy cùng OrcheStars đón chào một mùa Giáng sinh đáng nhớ, nơi âm nhạc kết nối những tâm hồn và những khoảnh khắc đẹp trở thành kỷ niệm khó quên.": "Join OrcheStars for a Christmas to remember, where music brings us together and the moments we share become lasting memories.",
  'Xem hạng vé & sơ đồ':'View tickets & seat map', 'Poster chính thức':'Official poster', 'Ngày tổ chức':'Dates', 'Thời gian':'Showtimes', 'Thứ Bảy':'Saturday', 'Chủ Nhật':'Sunday', 'Các hạng vé & Giá vé':'Ticket tiers & prices', 'Từ 200,000 VNĐ':'From 200,000 VND', 'Từ 200.000đ':'From 200,000₫',
  'Nhạc trưởng':'Conductor', 'Xem hồ sơ':'View profile', 'Đóng hồ sơ':'Close profile',
- 'Thạc sĩ chỉ huy tại Mannheim và đồng sáng lập Maestoso Vietnam.':'Mannheim alumnus and co-founder of Maestoso Vietnam.',
- 'Phụ trách hợp xướng OrcheStars, từng lưu diễn cùng Hans Zimmer.':'OrcheStars chorus master who sang on tour with Hans Zimmer.',
+ 'Anh học chỉ huy dàn nhạc tại Mannheim, chơi đàn clavecin và đồng sáng lập Maestoso Vietnam.':'A Mannheim-trained conductor and harpsichordist, he co-founded Maestoso Vietnam.',
+ 'Anh chỉ huy hợp xướng thiếu nhi OrcheStars và từng hát trong chuyến lưu diễn của Hans Zimmer.':'He directs the OrcheStars Children’s Choir and sang on Hans Zimmer’s international tour.',
  'Các giọng ca nhí kể chuyện Giáng Sinh cùng dàn nhạc.':'Young voices join the orchestra to tell a Christmas story.',
  'Chọn vị trí':'Choose your seat', 'thưởng thức buổi diễn':'and enjoy the show', 'Ghế ngồi':'Seated', 'Ghế đứng':'Standing', 'Vé ngồi':'Seated', 'Vé đứng':'Standing', 'Khu giữa, gần sân khấu nhất':'Central area, closest to the stage', 'Khu giữa, ngay sau First Class':'Central area, behind First Class', 'Các tầng xa sân khấu hơn':'Upper floors, further from the stage', 'Khu vé đứng ở các tầng xa':'Standing areas on the upper floors', 'Đang chọn':'Selected',
  'Sơ đồ khán phòng':'Seat map', 'Sơ đồ khán phòng TTC26 gồm 5 hạng vé':'TTC26 seating chart with five ticket tiers', 'Sơ đồ tham khảo vị trí các khu vực. Tình trạng ghế được cập nhật tại trang đặt vé.':'Map for reference. Current seat availability is shown on the booking page.',
@@ -134,7 +149,7 @@ export function initLanguage() {
  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
  while (walker.nextNode()) {
   const node = walker.currentNode;
-  if (!node.parentElement.closest('script, style, #language-toggle, [data-tk-cta], #count b, [data-tk-name], [data-tk-price]') && node.textContent.trim()) texts.push([node,node.textContent]);
+  if (!node.parentElement.closest('script, style, .bio-copy p[lang], #language-toggle, [data-tk-cta], #count b, [data-tk-name], [data-tk-price]') && node.textContent.trim()) texts.push([node,node.textContent]);
  }
  document.querySelectorAll('[aria-label], [title]').forEach(el => {
   if (el === button || el.matches('.tk-cta')) return;

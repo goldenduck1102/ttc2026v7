@@ -75,7 +75,7 @@ export const COMPANY = {
   registration: 'Giấy chứng nhận đăng ký doanh nghiệp số: 0318788336 cấp lần đầu ngày 23 tháng 12 năm 2024 bởi Sở Kế Hoạch và Đầu Tư TP. Hồ Chí Minh.',
   policies: ['Điều khoản và Chính sách', 'Chính sách thanh toán', 'Chính sách vận chuyển', 'Chính sách bảo mật thông tin', 'Chính sách xử lý khiếu nại', 'Chính sách kiểm hàng'],
   socials: [
-    { name: 'Facebook', icon: 'facebook', href: 'https://www.facebook.com/profile.php?id=61595933903901' },
+    { name: 'Facebook', icon: 'facebook', href: 'https://www.facebook.com/orchestarsvn' },
     { name: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/orchestars.vn/' },
     { name: 'YouTube', icon: 'youtube', href: 'https://www.youtube.com/@orchestars_vn' },
     { name: 'TikTok', icon: 'tiktok', href: 'https://www.tiktok.com/@orchestars' },

@@ -134,11 +134,6 @@ function showEarlyBird() {
   lockScroll();
 }
 addEventListener('scroll', showEarlyBird, { passive: true });
-const [earlyBirdIntro, earlyBirdStatus] = $$('#early-bird-message span', earlyBirdDialog);
-$('.early-bird-claim', earlyBirdDialog).addEventListener('click', () => {
-  earlyBirdIntro.hidden = true;
-  earlyBirdStatus.hidden = false;
-});
 
 /* Count-up stats */
 const countObserver = new IntersectionObserver(entries => entries.forEach(entry => {
@@ -307,6 +302,18 @@ for (const type of ['pointerup', 'pointercancel', 'lostpointercapture']) {
 }
 tkDialog.addEventListener('close', resetMapZoom);
 
+const aboutToggle = document.querySelector('.about-toggle');
+const aboutContinuation = document.getElementById('about-continuation');
+function setAboutExpanded(expanded) {
+  aboutToggle.setAttribute('aria-expanded', String(expanded));
+  aboutToggle.firstElementChild.hidden = expanded;
+  aboutToggle.lastElementChild.hidden = !expanded;
+  aboutContinuation.inert = !expanded;
+}
+setAboutExpanded(false);
+aboutToggle.hidden = false;
+aboutToggle.addEventListener('click', () => setAboutExpanded(aboutToggle.getAttribute('aria-expanded') === 'false'));
+
 initLanguage();
 
 /* Mobile carousels keep the desktop grids and the existing gallery lightbox. */
@@ -334,11 +341,34 @@ for (const [selector, itemSelector] of [['.acts', '.act'], ['.show-grid', '.show
   items = allItems.filter(item => !phone.matches || !item.classList.contains('gallery-portrait'));
   controls.innerHTML = items.map((_,i) => `<button type="button" class="carousel-dot" aria-label="${i+1} / ${items.length}" aria-pressed="${i===0}"></button>`).join('');
   dots = $$('button',controls);
-  dots.forEach((dot,i) => dot.addEventListener('click',() => {
-   const rect=items[i].getBoundingClientRect(), bounds=track.getBoundingClientRect();
-   track.scrollBy({left:rect.left+rect.width/2-bounds.left-track.clientWidth/2,behavior:reduced() ? 'instant' : 'smooth'});
-  }));
+  dots.forEach((dot,i) => dot.addEventListener('click',() => showItem(i)));
   update();
+ }
+ function showItem(index) {
+  const rect = items[index].getBoundingClientRect(), bounds = track.getBoundingClientRect();
+  track.scrollBy({left:rect.left + rect.width/2 - bounds.left - track.clientWidth/2, behavior:reduced() ? 'instant' : 'smooth'});
+ }
+ if (selector === '.acts') {
+  let inView = false;
+  let timer;
+  function scheduleAdvance() {
+   clearTimeout(timer);
+   if (!phone.matches || !inView || document.hidden || reduced()) return;
+   timer = setTimeout(() => {
+    if (!document.querySelector('dialog[open]') && !track.matches(':active') && !track.querySelector(':focus-visible') && !controls.querySelector(':focus-visible')) {
+     showItem((current + 1) % items.length);
+    }
+    scheduleAdvance();
+   }, 5000);
+  }
+  new IntersectionObserver(([entry]) => {
+   inView = entry.isIntersecting;
+   scheduleAdvance();
+  }).observe(track);
+  phone.addEventListener('change', scheduleAdvance);
+  matchMedia('(prefers-reduced-motion:reduce)').addEventListener('change', scheduleAdvance);
+  document.addEventListener('visibilitychange', scheduleAdvance);
+  track.addEventListener('scrollend', scheduleAdvance);
  }
  phone.addEventListener('change',configure); configure();
  track.querySelectorAll('img').forEach(img=>img.addEventListener('load',update));
@@ -438,4 +468,19 @@ document.querySelectorAll('.bm').forEach(bm => {
     input.dispatchEvent(new Event('change', { bubbles: true }));
     (document.querySelector('#chon-ve .tk-buy') || input).scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
   });
+});
+
+const orchestraTrack = document.querySelector('.orchestra-slides');
+const orchestraControls = document.querySelector('.orchestra-controls');
+const photoCount = orchestraTrack.children.length;
+const photoIndex = () => Math.round(orchestraTrack.scrollLeft / orchestraTrack.clientWidth);
+orchestraControls.querySelectorAll('button').forEach((button, index) => {
+  const step = index === 0 ? -1 : 1;
+  button.addEventListener('click', () => {
+    const next = (photoIndex() + step + photoCount) % photoCount;
+    orchestraTrack.scrollLeft = next * orchestraTrack.clientWidth;
+  });
+});
+orchestraTrack.addEventListener('scroll', () => {
+  if (orchestraTrack.clientWidth) orchestraControls.querySelector('output').value = (photoIndex() + 1) + ' / ' + photoCount;
 });
