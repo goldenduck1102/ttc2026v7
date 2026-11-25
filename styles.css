@@ -1001,3 +1001,13 @@ dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin-inline: a
 
 html[lang="vi"] .bio-copy p[lang="en"], html[lang="en"] .bio-copy p[lang="vi"] { display: none; }
 #bio-orchestra .bio-photo { width: min(100%, 555px); height: auto; }
+
+.voucher-tiers { width: 100%; margin: 12px 0 20px; border-collapse: collapse; font-size: 14px; }
+.voucher-tiers th, .voucher-tiers td { text-align: left; padding: 8px 6px; border-bottom: 1px solid currentColor; }
+.voucher-terms { margin: 8px 0 0; padding-left: 1.3em; list-style: disc; line-height: 1.6; }
+.voucher-note { margin-top: 14px; font-size: 14px; }
+.voucher-note a { color: inherit; text-decoration: underline; }
+#voucher-nanohome { scroll-margin-top: 150px; }
+
+.voucher-faq-link { display: block; width: fit-content; margin-top: 6px; padding: 5px 10px; border: 1px solid currentColor; border-radius: 20px; color: var(--pine); font-size: 13px; line-height: 1.4; text-decoration: none; }
+.voucher-faq-link:hover, .voucher-faq-link:focus-visible { background: var(--pine); color: white; }

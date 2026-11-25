@@ -2,6 +2,11 @@
 export const EVENT_NAME = 'A TALE OF TWO CHRISTMASES';
 export const FAQ_ITEMS = [
   {
+    "question": "Vé của tôi có ưu đãi gì tại nanoHome và voucher được dùng như thế nào?",
+    "answer": "Mức ưu đãi tại nanoHome Gallery tùy theo hạng vé của bạn.",
+    "voucherTerms": true
+  },
+  {
     "question": "Chương trình có phù hợp với trẻ em không?",
     "answer": "Chương trình chào đón gia đình và trẻ nhỏ. Trẻ từ 3 tuổi trở lên cần có vé riêng. Trẻ dưới 3 tuổi được ngồi trên lòng người lớn."
   },
