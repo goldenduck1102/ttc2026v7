@@ -454,8 +454,11 @@ for (const button of document.querySelectorAll('.benefit-info')) {
   button.addEventListener('focus', () => {
     if (button.matches(':focus-visible')) openDetail(button);
   });
-  button.addEventListener('blur', () => {
-    if (activeInfo === button) closeDetail();
+  button.addEventListener('blur', event => {
+    if (activeInfo === button && !popup.contains(event.relatedTarget)) closeDetail();
+  });
+  popup.addEventListener('focusout', event => {
+    if (activeInfo === button && !popup.contains(event.relatedTarget) && event.relatedTarget !== button) closeDetail();
   });
   button.addEventListener('click', () => {
     if (activeInfo === button && pinnedInfo) return closeDetail();
@@ -495,3 +498,17 @@ document.querySelectorAll('.bm').forEach(bm => {
     (document.querySelector('#chon-ve .tk-buy') || input).scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
   });
 });
+
+const voucherFaq = document.getElementById('voucher-nanohome');
+for (const link of document.querySelectorAll('a[href="#voucher-nanohome"]')) {
+  link.addEventListener('click', () => {
+    closeDetail();
+    voucherFaq.open = true;
+    voucherFaq.querySelector('summary').focus({ preventScroll: true });
+  });
+}
+function openLinkedVoucher() {
+  if (location.hash === '#voucher-nanohome') voucherFaq.open = true;
+}
+openLinkedVoucher();
+window.addEventListener('hashchange', openLinkedVoucher);

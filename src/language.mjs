@@ -126,7 +126,20 @@ Object.assign(translations, {
   "Xem album biểu diễn": "View the performance album",
   "Hợp xướng thiếu nhi": "Children’s choir"
 });
+Object.assign(translations, {
+ 'Xem điều kiện ưu đãi': 'View offer terms', 'Loại vé': 'Ticket type', 'Ưu đãi nanoHome': 'nanoHome discount',
+ 'Vé ngồi': 'Seated', 'Vé đứng': 'Standing', 'Không bao gồm voucher': 'No voucher included',
+ 'Điều kiện sử dụng voucher': 'Voucher terms and conditions',
+ 'Chỉ áp dụng khi mua hàng trực tiếp tại nanoHome Gallery.': 'Valid only for in-store purchases at nanoHome Gallery.',
+ 'Không áp dụng cho sản phẩm do bên thứ ba ký gửi.': 'Excludes products consigned by third parties.',
+ 'Không dùng chung với các chương trình khuyến mãi khác.': 'Cannot be combined with other promotions.',
+ 'Mỗi voucher chỉ sử dụng được một lần.': 'Each voucher can be used once.',
+ 'Voucher có giá trị đến hết ngày 31/12/2026.': 'Valid through 31 December 2026.',
+ 'Mỗi voucher có điều kiện sử dụng riêng.': 'Each voucher is subject to its own terms and conditions.',
+ 'Xem điều kiện voucher nanoHome': 'View nanoHome voucher terms'
+});
 const faqEnglish = [
+ ['What nanoHome benefit comes with my ticket, and how can I use the voucher?', 'Your nanoHome Gallery benefit depends on your ticket tier.'],
  ['Is the concert suitable for children?', 'Families and young children are welcome. Children aged 3 and above need their own ticket. Children under 3 may sit on an adult’s lap.'],
  ['How do I book tickets and choose seats?', 'Explore the ticket tiers and seat map here, then select “Book now” to choose your showtime and seats and complete your booking on OrcheStars.'],
  ['What time should I arrive?', 'Check-in starts at 16:45 for the 17:30–19:00 show and 19:15 for the 20:00–21:30 show. Please arrive at least 30 minutes early. Check-in closes at 17:45 and 20:15 respectively.'],

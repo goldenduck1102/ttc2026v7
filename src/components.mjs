@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { FAQ_ITEMS, TICKET_TIERS, PROGRAMMES, COMPANY, EVENT_NAME } from './content.mjs';
 
 /** Static UI components, rendered by Vite for both dev and production. */
-export const PURCHASE_URL = 'https://www.orchestars.vn/events/ttc26';
+export const PURCHASE_URL = 'https://www.orchestars.vn/events/ttc26/select-ticket';
 
 function escapeAttribute(value = '') {
   return String(value).replaceAll('&', '&amp;').replaceAll('"', '&quot;')
@@ -49,6 +49,7 @@ function attributes(source) {
 
 export function renderComponents(html) {
   return html
+    .replaceAll('{{PURCHASE_URL}}', PURCHASE_URL)
     .replaceAll('{{EVENT_NAME}}', escapeAttribute(EVENT_NAME))
     .replaceAll('<ui-ticket-options></ui-ticket-options>', TicketOptions())
     .replaceAll('<ui-programmes></ui-programmes>', ProgrammePanels())
@@ -70,8 +71,21 @@ export function ProgrammePanels() {
   }).join('');
 }
 
+function VoucherTerms() {
+  return `<table class="voucher-tiers"><thead><tr><th scope="col">Hạng vé</th><th scope="col">Loại vé</th><th scope="col">Ưu đãi nanoHome</th></tr></thead>
+    <tbody><tr><th scope="row">Platinum &amp; Diamond</th><td>Vé ngồi</td><td>20%</td></tr>
+    <tr><th scope="row">Gold &amp; Silver</th><td>Vé ngồi</td><td>15%</td></tr>
+    <tr><th scope="row">Student</th><td>Vé đứng</td><td>Không bao gồm voucher</td></tr></tbody></table>
+    <h3>Điều kiện sử dụng voucher</h3>
+    <ul class="voucher-terms"><li>Chỉ áp dụng khi mua hàng trực tiếp tại nanoHome Gallery.</li>
+    <li>Không áp dụng cho sản phẩm do bên thứ ba ký gửi.</li>
+    <li>Không dùng chung với các chương trình khuyến mãi khác.</li>
+    <li>Mỗi voucher chỉ sử dụng được một lần.</li>
+    <li>Voucher có giá trị đến hết ngày 31/12/2026.</li></ul>`;
+}
+
 export function FaqList() {
-  return `<div class="faq-list">${FAQ_ITEMS.map((item, index) => `<details${index === 0 ? ' open' : ''}><summary>${escapeAttribute(item.question)}</summary><div><p>${escapeAttribute(item.answer)}</p></div></details>`).join('')}</div>`;
+  return `<div class="faq-list">${FAQ_ITEMS.map((item, index) => `<details${item.voucherTerms ? ' id="voucher-nanohome"' : ''}${index === 0 ? ' open' : ''}><summary>${escapeAttribute(item.question)}</summary><div><p>${escapeAttribute(item.answer)}</p>${item.voucherTerms ? VoucherTerms() : ''}</div></details>`).join('')}</div>`;
 }
 
 export function VenueStack() {
@@ -106,6 +120,12 @@ function TicketSummary(option) {
 
 const featured = { platinum: 'Chỉ 20 vé mỗi suất', diamond: 'Đáng giá nhất' };
 
+const voucherLink = '<a class="voucher-faq-link" href="#voucher-nanohome">Xem điều kiện ưu đãi</a>';
+
+function BenefitInfo(label, explanation, link, id) {
+  return `<div class="benefit-label"><span id="benefit-label-${id}">${label}</span><button class="benefit-info" type="button" aria-labelledby="benefit-help-${id} benefit-label-${id}" aria-controls="benefit-detail-${id}" aria-describedby="benefit-detail-${id}" aria-expanded="false"><span aria-hidden="true">i</span><span class="sr-only" id="benefit-help-${id}">Chi tiết</span></button></div><div class="benefit-detail" id="benefit-detail-${id}" role="${link ? 'group' : 'tooltip'}" popover="manual">${explanation}${link}</div>`;
+}
+
 function TicketBenefits() {
   const included = '<span class="benefit-check" aria-hidden="true">✓</span><span class="sr-only">Bao gồm</span>';
   const empty = '<span aria-hidden="true">—</span><span class="sr-only">Không bao gồm</span>';
@@ -114,7 +134,7 @@ function TicketBenefits() {
     ['Chụp ảnh riêng', 'Khách Diamond và Platinum được ưu tiên chụp ảnh với nhiếp ảnh gia chuyên nghiệp của OrcheStars. Bạn có thể chụp riêng, cùng người thương hoặc cùng gia đình tại backdrop sự kiện được thiết kế và trang trí đặc biệt cho mùa Giáng sinh.', [true, true]],
     ['Ưu tiên ghế & check-in', 'Khách Diamond và Platinum được ưu tiên vị trí ngồi và làm thủ tục vào cửa.', [true, true]],
     ['Quà tặng đêm nhạc', 'Mang một chút ngọt ngào của đêm Giáng Sinh về nhà. Khách Gold nhận một túi Cookie.<br>Với vé Diamond hoặc Platinum, món quà dành cho bạn là một túi Cookie hoặc Chocolate.', ['Quà tặng Giáng sinh\nđặc biệt', 'Quà tặng Giáng sinh\nđặc biệt', 'Quà tặng Giáng sinh']],
-    ['Ưu đãi nội thất nanoHome', 'nanoHome mang đến nội thất cao cấp từ các thương hiệu nổi tiếng châu Âu, với nhiều thiết kế dành cho không gian sinh hoạt của gia đình.<br>Khi mua sắm tại nanoHome Gallery, khách giữ vé Platinum hoặc Diamond được giảm 20%, khách giữ vé Gold hoặc Silver được giảm 15%. Ưu đãi không áp dụng cho sản phẩm do bên thứ ba ký gửi và không áp dụng đồng thời với các chương trình khuyến mãi khác.', ['20%', '20%', '15%', '15%']],
+    ['Ưu đãi nội thất nanoHome', 'nanoHome mang đến nội thất cao cấp từ các thương hiệu nổi tiếng châu Âu, với nhiều thiết kế dành cho không gian sinh hoạt của gia đình.<br>Khi mua sắm tại nanoHome Gallery, khách giữ vé Platinum hoặc Diamond được giảm 20%, khách giữ vé Gold hoặc Silver được giảm 15%. Ưu đãi không áp dụng cho sản phẩm do bên thứ ba ký gửi và không áp dụng đồng thời với các chương trình khuyến mãi khác.', ['20%', '20%', '15%', '15%'], voucherLink],
     ['Ưu đãi ẩm thực khách sạn', 'Thưởng thức ẩm thực tại Renaissance Riverside Hotel Saigon với voucher giảm 40% dành cho khách Gold, Diamond và Platinum.', ['40%', '40%', '40%']],
     ['Nước uống (1 chai)', 'Mỗi khách có vé Silver, Gold, Diamond hoặc Platinum được tặng một chai nước uống kèm theo.', [true, true, true, true]],
   ];
@@ -122,15 +142,15 @@ function TicketBenefits() {
   const tierOptions = columns.map(([, tier]) => `<option value="${tier.key}">${tier.name}</option>`).join('');
   const col = tier => `col-${tier.key}${featured[tier.key] ? ' is-featured' : ''}`;
   const head = columns.map(([, tier]) => `<th scope="col" class="${col(tier)}" style="--tier:${tier.color}"><span class="benefits-name"><i class="benefits-dot" aria-hidden="true"></i>${tier.name}</span><span class="benefits-amount">${tier.price}đ</span></th>`).join('');
-  const body = rows.map(([label, explanation, values], index) => {
+  const body = rows.map(([label, explanation, values, link = ''], index) => {
     const cells = columns.map(([i, tier]) => `<td class="${col(tier)}">${values[i] === true ? included : values[i] || empty}</td>`).join('');
-    return `<tr class="benefit-row"><th scope="row"><div class="benefit-label"><span id="benefit-label-${index}">${label}</span><button class="benefit-info" type="button" aria-labelledby="benefit-help-${index} benefit-label-${index}" aria-controls="benefit-detail-${index}" aria-describedby="benefit-detail-${index}" aria-expanded="false"><span aria-hidden="true">i</span><span class="sr-only" id="benefit-help-${index}">Chi tiết</span></button></div><p class="benefit-detail" id="benefit-detail-${index}" role="tooltip" popover="manual">${explanation}</p></th>${cells}</tr>`;
+    return `<tr class="benefit-row"><th scope="row">${BenefitInfo(label, explanation, link, index)}</th>${cells}</tr>`;
   }).join('');
   return `<div class="benefits"><h3 id="benefits-title">Quyền lợi theo hạng vé</h3>
     <div class="benefits-scroll" role="region" aria-labelledby="benefits-title" tabindex="0"><label class="benefits-filter"><span>Hạng vé</span><select><option value="">Chọn hạng vé</option>${tierOptions}</select></label><table>
     <thead><tr><th scope="col">Quyền lợi</th>${head}</tr></thead>
     <tbody>${body}</tbody>
-    </table></div>${TicketBenefitsMobile(rows)}</div>`;
+    </table></div>${TicketBenefitsMobile(rows)}<p class="voucher-note"><span>Mỗi voucher có điều kiện sử dụng riêng.</span> <a href="#voucher-nanohome">Xem điều kiện voucher nanoHome</a></p></div>`;
 }
 
 // Mobile-only benefits: tier tabs + one detail card, Diamond selected by default.
@@ -138,11 +158,12 @@ function TicketBenefitsMobile(rows) {
   const tiers = [...TICKET_TIERS.entries()];
   const cls = tier => `bm-${tier.key}${featured[tier.key] ? ' is-featured' : ''}`;
   const pick = tier => `<button type="button" class="bm-pick" data-bm-pick="${tier.key}"><span>Chọn</span> ${tier.name}</button>`;
-  const list = i => `<ul class="bm-list">${rows.map(([label, , values]) => {
+  const list = i => `<ul class="bm-list">${rows.map(([label, explanation, values, link = '']) => {
     const value = values[i];
+    const title = link ? BenefitInfo(label, explanation, link, `mobile-${i}`) : `<span class="bm-label">${label}</span>`;
     return value
-      ? `<li class="is-on"><span class="bm-tick" aria-hidden="true">✓</span><span class="bm-label">${label}</span>${value === true ? '' : `<b class="bm-val">${value.replace('<br>', ' ')}</b>`}</li>`
-      : `<li class="is-off"><span class="bm-tick" aria-hidden="true">—</span><span class="bm-label">${label}</span><span class="sr-only">Không bao gồm</span></li>`;
+      ? `<li class="is-on"><span class="bm-tick" aria-hidden="true">✓</span>${title}${value === true ? '' : `<b class="bm-val">${value.replace('<br>', ' ')}</b>`}</li>`
+      : `<li class="is-off"><span class="bm-tick" aria-hidden="true">—</span>${title}<span class="sr-only">Không bao gồm</span></li>`;
   }).join('')}</ul>`;
   const head = tier => `<span class="bm-head"><span class="bm-name"><i class="benefits-dot" style="--tier:${tier.color}" aria-hidden="true"></i>${tier.name}</span><span class="bm-price">${tier.price}đ</span>${tier.key === 'student' ? `<small class="bm-kind">${tier.kind}</small>` : ''}</span>`;
 
