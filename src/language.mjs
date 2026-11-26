@@ -1,6 +1,7 @@
 import { FAQ_ITEMS } from './content.mjs';
 
 const translations = {
+ "Nhập mã WORLDCLASS giảm 15% đến hết 30/11! ·": "Save 15% with WORLDCLASS through 30 November! ·",
  "Đặt vé ngay!": "Book now!",
  "Giáng Sinh giữa hai thế giới âm nhạc.": "Christmas in two musical worlds.",
  "Giáng Sinh có thể vang lên trong sự tĩnh lặng của một thánh đường, cũng có thể cất lên giữa nhịp điệu rộn ràng của một đêm hội. Mùa Giáng Sinh năm nay, OrcheStars đặt hai sắc thái ấy cạnh nhau để kể một câu chuyện hoàn toàn mới trong A Tale of Two Christmases 2026.": "Christmas can ring out in the hush of a church or rise above the bustle of a festive evening. This year, OrcheStars brings those two sounds together to tell a new story in A Tale of Two Christmases 2026.",

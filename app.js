@@ -35,6 +35,22 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && toggle.get
 document.addEventListener('click', e => { if (!nav.contains(e.target) && !toggle.contains(e.target)) setMenu(false); });
 matchMedia('(min-width:1001px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
 const panel = $('.nut-panel');
+const nutOffer = document.getElementById('nut-offer');
+const offerStart = Date.parse('2026-11-25T00:00:00+07:00');
+const offerEnd = Date.parse('2026-12-01T00:00:00+07:00');
+let offerTimer;
+function updateNutOffer() {
+  clearTimeout(offerTimer);
+  const now = Date.now();
+  nutOffer.hidden = now < offerStart || now >= offerEnd;
+  if (now < offerEnd) {
+    const nextChange = now < offerStart ? offerStart : offerEnd;
+    offerTimer = setTimeout(updateNutOffer, Math.min(nextChange - now, 2147483647));
+  }
+}
+updateNutOffer();
+window.addEventListener('pageshow', updateNutOffer);
+document.addEventListener('visibilitychange', updateNutOffer);
 let visiblePanelHeight;
 function alignHeaderWithPanel() {
   const height = Math.max(0, panel.getBoundingClientRect().bottom);
