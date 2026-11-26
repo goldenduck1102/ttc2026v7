@@ -1,6 +1,7 @@
 import { FAQ_ITEMS } from './content.mjs';
 
 const translations = {
+ "Trang chủ OrcheStars": "OrcheStars homepage",
  "Nhập mã WORLDCLASS giảm 15% đến hết 30/11! ·": "Save 15% with WORLDCLASS through 30 November! ·",
  "Đặt vé ngay!": "Book now!",
  "Giáng Sinh giữa hai thế giới âm nhạc.": "Christmas in two musical worlds.",
