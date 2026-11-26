@@ -51,15 +51,10 @@ function updateNutOffer() {
 updateNutOffer();
 window.addEventListener('pageshow', updateNutOffer);
 document.addEventListener('visibilitychange', updateNutOffer);
-let visiblePanelHeight;
 function alignHeaderWithPanel() {
-  const height = Math.max(0, panel.getBoundingClientRect().bottom);
-  if (height === visiblePanelHeight) return;
-  visiblePanelHeight = height;
-  document.documentElement.style.setProperty('--nut-panel-height', height + 'px');
+  document.documentElement.style.setProperty('--nut-panel-height', panel.offsetHeight + 'px');
 }
 new ResizeObserver(alignHeaderWithPanel).observe(panel);
-window.addEventListener('scroll', alignHeaderWithPanel, { passive: true });
 alignHeaderWithPanel();
 panel.querySelector('button').addEventListener('click', () => {
   panel.hidden = true;

@@ -4,7 +4,7 @@
 /* ---------- Base ---------- */
 :root { color-scheme: light; font-family: var(--font-body); font-size: var(--font-size-base); font-weight: 400; color: var(--ink); }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 88px; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(88px + var(--nut-panel-height, 32px)); -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--paper) var(--noise); color: var(--ink); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, p, figure, dl, dd { margin: 0; }
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
@@ -1013,7 +1013,8 @@ html[lang="vi"] .bio-copy p[lang="en"], html[lang="en"] .bio-copy p[lang="vi"] {
 .voucher-faq-link:hover, .voucher-faq-link:focus-visible { background: var(--pine); color: white; }
 
 /* Nutcracker announcement and related event */
-.nut-panel { position: relative; z-index: 52; background: #14213a; color: #fff9ec; text-align: center; font-size: 14px; }
+body { padding-top: var(--nut-panel-height, 32px); }
+.nut-panel { position: fixed; inset: 0 0 auto; z-index: 52; background: #14213a; color: #fff9ec; text-align: center; font-size: 14px; }
 .nut-panel a { display: block; padding: 7px 42px; line-height: 1.4; }
 .nut-panel strong, .nut-panel b, .nut-panel button { color: #f4d18c; }
 .nut-panel button { position: absolute; inset: 0 0 0 auto; width: 42px; background: transparent; font-size: 22px; }
