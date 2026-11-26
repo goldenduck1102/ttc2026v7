@@ -34,12 +34,27 @@ nav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); 
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setMenu(false, true); });
 document.addEventListener('click', e => { if (!nav.contains(e.target) && !toggle.contains(e.target)) setMenu(false); });
 matchMedia('(min-width:1001px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+const panel = $('.nut-panel');
+let visiblePanelHeight;
+function alignHeaderWithPanel() {
+  const height = Math.max(0, panel.getBoundingClientRect().bottom);
+  if (height === visiblePanelHeight) return;
+  visiblePanelHeight = height;
+  document.documentElement.style.setProperty('--nut-panel-height', height + 'px');
+}
+new ResizeObserver(alignHeaderWithPanel).observe(panel);
+window.addEventListener('scroll', alignHeaderWithPanel, { passive: true });
+alignHeaderWithPanel();
+panel.querySelector('button').addEventListener('click', () => {
+  panel.hidden = true;
+  $('.hdr-logo').focus();
+});
 const navLinks = $$('a', nav);
 const sectionObserver = new IntersectionObserver(entries => entries.forEach(entry => {
   if (!entry.isIntersecting) return;
   navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`));
 }), { rootMargin: '-45% 0px -50% 0px' });
-['su-kien', 'chon-ve', 'khoanh-khac', 'dia-diem', 'hoi-dap'].forEach(id => { const el = document.getElementById(id); if (el) sectionObserver.observe(el); });
+['su-kien', 'chon-ve', 'khoanh-khac', 'dia-diem', 'hoi-dap', 'nutcracker-rec'].forEach(id => { const el = document.getElementById(id); if (el) sectionObserver.observe(el); });
 
 /* Reveal on scroll */
 const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
