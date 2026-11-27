@@ -70,7 +70,7 @@ const translations = {
  "Khách Platinum và Diamond có thể chụp ảnh gia đình, cặp đôi hoặc cá nhân tại khu chụp ảnh ở sảnh Việt Kitchen.": "Platinum and Diamond guests can take private family, couple or individual portraits at the photo booth in the Việt Kitchen lobby.",
  "Student là vé đứng dành cho học sinh, sinh viên tại tầng 8.": "Student tickets are for students in the standing area on floor 8."
 ,
- 'ƯU ĐÃI ĐẶC BIỆT':'SPECIAL OFFER', 'EARLYBIRD GIẢM 15%':'EARLY BIRD 15% OFF', 'Đặc quyền dành cho những vị khách':'An exclusive offer for the first guests', 'đầu tiên xem thông tin sự kiện':'to explore the event.', 'Áp dụng đến hết ngày 26/11/2026.':'Valid through 26 November 2026.', 'Xem ưu đãi khác':'View other offers', 'Áp dụng ưu đãi':'Apply offer', 'Đóng ưu đãi':'Close offer',
+ 'GIẢM 10%':'SAVE 10%', 'Nhập mã':'Enter code', 'khi đặt vé.':'when booking.', 'Áp dụng từ':'Valid from', 'đến hết':'through', 'Đóng ưu đãi':'Close offer',
  'Đến nội dung chính':'Skip to content', 'Sự kiện':'Event', 'Hạng vé':'Tickets', 'Khoảnh khắc 2025':'2025 Gallery', 'Kí ức':'Memories', 'Địa điểm':'Venue', 'Hỏi đáp':'FAQ',
  'Mua vé':'Book tickets', 'Mua vé ngay':'Book now', 'Về đêm nhạc':'About the concert', 'Giao hưởng cổ điển & Âm nhạc đương đại':'Classical Symphony & Contemporary Music', 'Vé từ 200.000đ':'Tickets from 200,000₫',
  'Xem hạng vé & sơ đồ':'View tickets & seat map', 'Poster chính thức':'Official poster', 'Ngày tổ chức':'Dates', 'Thời gian':'Showtimes', 'Thứ Bảy':'Saturday', 'Suất diễn':'Showtimes', 'Chủ Nhật':'Sunday', 'Các hạng vé & Giá vé':'Ticket tiers & prices', 'Từ 200,000 VNĐ':'From 200,000 VND', 'Từ 200.000đ':'From 200,000₫',

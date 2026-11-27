@@ -154,43 +154,29 @@ document.querySelectorAll('dialog').forEach(dialog => {
   });
 });
 
-/* Early Bird opens at 70% scroll depth once per page load. */
-const earlyBirdDialog = $('#early-bird-dialog');
-const earlyBirdClaim = earlyBirdDialog.querySelector('.early-bird-claim');
-const claimDestination = earlyBirdClaim.href;
-const lastDay = earlyBirdDialog.querySelector('time').dateTime;
-const offerEndsAt = Date.parse(lastDay + 'T00:00:00+07:00') + 86400000;
-let expiryTimer;
+/* Show the promotion once per page load at 70% scroll depth during the offer. */
+const promotionDialog = $('#promotion-dialog');
+const [promotionStartsAt, promotionLastDay] = $$('time', promotionDialog)
+  .map(time => Date.parse(time.dateTime + 'T00:00:00+07:00'));
+const promotionEndsAt = promotionLastDay + 86400000;
 
-function updateEarlyBird() {
-  clearTimeout(expiryTimer);
-  const remaining = offerEndsAt - Date.now();
-  const expired = remaining <= 0;
-  earlyBirdClaim.firstElementChild.hidden = expired;
-  earlyBirdClaim.lastElementChild.hidden = !expired;
-  earlyBirdClaim.href = expired ? '#benefits-title' : claimDestination;
-  if (!expired) expiryTimer = setTimeout(updateEarlyBird, Math.min(remaining, 2147483647));
-}
+function showPromotion() {
+  const now = Date.now();
+  if (now < promotionStartsAt || now >= promotionEndsAt) return;
 
-earlyBirdClaim.addEventListener('click', () => {
-  updateEarlyBird();
-  if (earlyBirdClaim.hash === '#benefits-title') earlyBirdDialog.close();
-});
-earlyBirdDialog.addEventListener('close', () => clearTimeout(expiryTimer));
-document.addEventListener('visibilitychange', () => {
-  if (!document.hidden && earlyBirdDialog.open) updateEarlyBird();
-});
-
-function showEarlyBird() {
   const page = document.scrollingElement;
   const scrollableHeight = page.scrollHeight - page.clientHeight;
   if (scrollableHeight <= 0 || page.scrollTop < scrollableHeight * 0.7 || $('dialog[open]')) return;
-  removeEventListener('scroll', showEarlyBird);
-  updateEarlyBird();
-  earlyBirdDialog.showModal();
+
+  removeEventListener('scroll', showPromotion);
+  promotionDialog.showModal();
   lockScroll();
+
+  const expiryTimer = setTimeout(() => promotionDialog.close(), promotionEndsAt - now);
+  promotionDialog.addEventListener('close', () => clearTimeout(expiryTimer), { once: true });
 }
-addEventListener('scroll', showEarlyBird, { passive: true });
+
+if (Date.now() < promotionEndsAt) addEventListener('scroll', showPromotion, { passive: true });
 
 /* Count-up stats */
 const countObserver = new IntersectionObserver(entries => entries.forEach(entry => {
