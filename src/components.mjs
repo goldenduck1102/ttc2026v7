@@ -25,11 +25,11 @@ export function Icon({ name = 'arrow-right' } = {}) {
   return `<svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[name]}"/></svg>`;
 }
 
-export function Button({ ariaLabel = `Mua vé ${EVENT_NAME}`, variant = 'pill', label } = {}) {
+export function Button({ ariaLabel = `Mua vé ${EVENT_NAME}`, variant = 'pill', tone = '' } = {}) {
   if (variant === 'booking') return `<a class="concert-booking-cta purchase-cta" href="${PURCHASE_URL}" target="_blank" rel="noopener" aria-label="${escapeAttribute(ariaLabel)}"><span>Đặt vé</span>${Icon({ name: 'arrow-up-right' })}</a>`;
-  if (variant === 'header') return `<a class="pill pill-red purchase-cta" href="${PURCHASE_URL}" target="_blank" rel="noopener" aria-label="${escapeAttribute(ariaLabel)}">${escapeAttribute(label || 'Mua vé')}</a>`;
-  const tone = variant === 'snow' ? 'pill-snow' : 'pill-ink';
-  return `<a class="pill ${tone} purchase-cta" href="${PURCHASE_URL}" target="_blank" rel="noopener" aria-label="${escapeAttribute(ariaLabel)}"><span>${escapeAttribute(label || 'Mua vé ngay')}</span>${Icon({ name: 'arrow-right' })}</a>`;
+  const onDark = tone === 'dark' ? ' cta-on-dark' : '';
+  if (variant === 'header') return `<a class="pill pill-red purchase-cta${onDark}" href="${PURCHASE_URL}" target="_blank" rel="noopener" aria-label="${escapeAttribute(ariaLabel)}">Mua vé</a>`;
+  return `<a class="pill purchase-cta${onDark}" href="${PURCHASE_URL}" target="_blank" rel="noopener"><span class="cta-label">ĐẶT VÉ NGAY</span>${Icon({ name: 'arrow-right' })}</a>`;
 }
 
 /** Numbered section tag in the paper style: ink badge + uppercase label. */
@@ -115,7 +115,7 @@ function TicketMap() {
 }
 
 function TicketSummary(option) {
-  return `<div class="tk-buy"><p class="tk-sum" hidden aria-live="polite"><small>Đang chọn</small><b data-tk-name></b><span data-tk-price></span></p><a class="pill ${option === 'b' ? 'pill-ink' : 'pill-red'} tk-cta purchase-cta" href="${PURCHASE_URL}" target="_blank" rel="noopener" aria-label="Chọn vị trí ngồi"><span data-tk-cta>Chọn vị trí ngồi</span>${Icon({ name: 'arrow-right' })}</a></div>`;
+  return `<div class="tk-buy"><p class="tk-sum" hidden aria-live="polite"><small>Bạn đang xem</small><b data-tk-name></b><span data-tk-price></span></p><a class="pill tk-cta purchase-cta cta-on-dark" href="${PURCHASE_URL}" target="_blank" rel="noopener" aria-label="Chọn ghế"><span data-tk-cta>Chọn ghế</span>${Icon({ name: 'arrow-right' })}</a></div>`;
 }
 
 const featured = { platinum: 'Chỉ 20 vé mỗi suất', diamond: 'Đáng giá nhất' };

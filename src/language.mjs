@@ -1,8 +1,11 @@
 import { FAQ_ITEMS } from './content.mjs';
 
 const translations = {
+ "Sắp diễn": "Next show",
+ "Hai suất mỗi tối · 17:30 & 20:00": "Two performances each evening · 17:30 & 20:00",
  "Trang chủ OrcheStars": "OrcheStars homepage",
  "Nhập mã WORLDCLASS giảm 15% đến hết 30/11! ·": "Save 15% with WORLDCLASS through 30 November! ·",
+ "ĐẶT VÉ NGAY": "BOOK NOW",
  "Đặt vé ngay!": "Book now!",
  "Giáng Sinh giữa hai thế giới âm nhạc.": "Christmas in two musical worlds.",
  "Giáng Sinh có thể vang lên trong sự tĩnh lặng của một thánh đường, cũng có thể cất lên giữa nhịp điệu rộn ràng của một đêm hội. Mùa Giáng Sinh năm nay, OrcheStars đặt hai sắc thái ấy cạnh nhau để kể một câu chuyện hoàn toàn mới trong A Tale of Two Christmases 2026.": "Christmas can ring out in the hush of a church or rise above the bustle of a festive evening. This year, OrcheStars brings those two sounds together to tell a new story in A Tale of Two Christmases 2026.",
@@ -75,7 +78,7 @@ const translations = {
  'Anh học chỉ huy dàn nhạc tại Mannheim, chơi đàn clavecin và đồng sáng lập Maestoso Vietnam.':'A Mannheim-trained conductor and harpsichordist, he co-founded Maestoso Vietnam.',
  'Anh chỉ huy hợp xướng thiếu nhi OrcheStars và từng hát trong chuyến lưu diễn của Hans Zimmer.':'He directs the OrcheStars Children’s Choir and sang on Hans Zimmer’s international tour.',
  'Các giọng ca nhí kể chuyện Giáng Sinh cùng dàn nhạc.':'Young voices join the orchestra to tell a Christmas story.',
- 'Chọn vị trí':'Choose your seat', 'thưởng thức buổi diễn':'and enjoy the show', 'Ghế ngồi':'Seated', 'Ghế đứng':'Standing', 'Vé ngồi':'Seated', 'Vé đứng':'Standing', 'Khu giữa, gần sân khấu nhất':'Central area, closest to the stage', 'Khu giữa, ngay sau First Class':'Central area, behind First Class', 'Các tầng xa sân khấu hơn':'Upper floors, further from the stage', 'Khu vé đứng ở các tầng xa':'Standing areas on the upper floors', 'Đang chọn':'Selected',
+ 'Chọn vị trí':'Choose your seat', 'thưởng thức buổi diễn':'and enjoy the show', 'Ghế ngồi':'Seated', 'Ghế đứng':'Standing', 'Vé ngồi':'Seated', 'Vé đứng':'Standing', 'Khu giữa, gần sân khấu nhất':'Central area, closest to the stage', 'Khu giữa, ngay sau First Class':'Central area, behind First Class', 'Các tầng xa sân khấu hơn':'Upper floors, further from the stage', 'Khu vé đứng ở các tầng xa':'Standing areas on the upper floors', 'Bạn đang xem':'You’re viewing',
  'Sơ đồ khán phòng':'Seat map', 'Sơ đồ khán phòng TTC26 gồm 5 hạng vé':'TTC26 seating chart with five ticket tiers', 'Sơ đồ tham khảo vị trí các khu vực. Tình trạng ghế được cập nhật tại trang đặt vé.':'Map for reference. Current seat availability is shown on the booking page.',
  'Thế giới âm nhạc':'Our musical world', 'Những câu chuyện':'Stories', 'được kể bằng âm nhạc':'told through music', 'Những kí ức luôn tồn tại':'Memories that stay', 'mãi mãi với thời gian.':'with us forever.',
  'Điểm hẹn':'The venue', 'Khách sạn':'A', '5 sao':'five-star hotel', 'Renaissance Riverside Sài Gòn':'Renaissance Riverside Saigon', '8–15 Tôn Đức Thắng, Phường Sài Gòn, TP. Hồ Chí Minh.':'8–15 Ton Duc Thang, Saigon Ward, Ho Chi Minh City.', '8–15 Tôn Đức Thắng, Phường Sài Gòn, TP. Hồ Chí Minh':'8–15 Ton Duc Thang, Saigon Ward, Ho Chi Minh City', 'Suất 1':'Show 1', 'Suất 2':'Show 2',
@@ -164,7 +167,7 @@ FAQ_ITEMS.forEach((item, i) => { translations[item.question] = faqEnglish[i][0];
 const dictionary = new Map(Object.entries(translations).map(([vi,en]) => [vi.toLocaleLowerCase('vi'),en]));
 function translate(value) {
  const clean = value.trim();
- if (clean.startsWith('Mua vé A TALE')) return value.replace('Mua vé', 'Book tickets for');
+ if (clean.startsWith('Mua vé A TALE')) return value.replace('Mua vé', 'Book tickets for').replace(', từ 200.000 đồng', ', from 200,000 VND');
  if (/^(Platinum|Diamond|Gold|Silver|Student), /.test(clean)) return value.replace('Vé ngồi', 'Seated').replace('Vé đứng', 'Standing').replace('đồng', 'VND');
  const translated = dictionary.get(clean.toLocaleLowerCase('vi')) || (clean.startsWith('· ') ? '· ' + (dictionary.get(clean.slice(2).toLocaleLowerCase('vi')) || clean.slice(2)) : null);
  return translated ? value.replace(clean, translated) : value;

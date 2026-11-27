@@ -246,15 +246,15 @@ $$('.tk-opt').forEach(option => {
     if (!tier) {
       map.dataset.active = '';
       map.dataset.focus = '';
-      $('[data-tk-cta]', option).textContent = document.documentElement.lang === 'en' ? 'Choose your seat' : 'Chọn vị trí ngồi';
-      $('.tk-cta', option).setAttribute('aria-label', document.documentElement.lang === 'en' ? 'Choose your seat' : 'Chọn vị trí ngồi');
+      $('[data-tk-cta]', option).textContent = document.documentElement.lang === 'en' ? 'Choose your seat' : 'Chọn ghế';
+      $('.tk-cta', option).setAttribute('aria-label', document.documentElement.lang === 'en' ? 'Choose your seat' : 'Chọn ghế');
       return;
     }
     map.dataset.active = tier.key;
     $('[data-tk-name]', option).textContent = tier.name;
     $('[data-tk-price]', option).textContent = `${tier.price}đ`;
-    $('[data-tk-cta]', option).textContent = document.documentElement.lang === 'en' ? 'Choose your seat' : 'Chọn vị trí ngồi';
-    $('.tk-cta', option).setAttribute('aria-label', `${document.documentElement.lang === 'en' ? 'Choose your seat' : 'Chọn vị trí ngồi'} — ${tier.name}, ${tier.price} VND`);
+    $('[data-tk-cta]', option).textContent = document.documentElement.lang === 'en' ? 'Choose your seat' : 'Chọn ghế';
+    $('.tk-cta', option).setAttribute('aria-label', `${document.documentElement.lang === 'en' ? 'Choose your seat' : 'Chọn ghế'} — ${tier.name}, ${tier.price} VND`);
   }
   form.addEventListener('click', event => {
     const input = event.target.closest('input[type="radio"]');
