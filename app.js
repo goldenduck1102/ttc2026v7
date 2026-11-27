@@ -5,6 +5,11 @@ const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const reduced = () => matchMedia('(prefers-reduced-motion:reduce)').matches;
 
+const borderPreview = new URLSearchParams(location.search).get('vien');
+if (['a', 'b', 'c'].includes(borderPreview)) {
+  $('.hero-cta .purchase-cta').dataset.borderPreview = borderPreview;
+}
+
 /* Load below-the-fold images near the viewport, including horizontal slides. */
 function loadImage(image) {
   image.loading = 'eager';

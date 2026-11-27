@@ -115,7 +115,7 @@ function TicketMap() {
 }
 
 function TicketSummary(option) {
-  return `<div class="tk-buy"><p class="tk-sum" hidden aria-live="polite"><small>Bạn đang xem</small><b data-tk-name></b><span data-tk-price></span></p><a class="pill tk-cta purchase-cta cta-on-dark" href="${PURCHASE_URL}" target="_blank" rel="noopener" aria-label="Chọn ghế"><span data-tk-cta>Chọn ghế</span>${Icon({ name: 'arrow-right' })}</a></div>`;
+  return `<div class="tk-buy" id="chon-ghe"><p class="tk-sum" hidden aria-live="polite"><small>Bạn đang xem</small><b data-tk-name></b><span data-tk-price></span></p><a class="pill tk-cta purchase-cta cta-on-dark" href="${PURCHASE_URL}" target="_blank" rel="noopener" aria-label="Chọn ghế"><span data-tk-cta>Chọn ghế</span>${Icon({ name: 'arrow-right' })}</a></div>`;
 }
 
 const featured = { platinum: 'Chỉ 20 vé mỗi suất', diamond: 'Đáng giá nhất' };
