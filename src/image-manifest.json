@@ -60,26 +60,31 @@
       }
     ]
   },
-  "/assets/ttc2026-poster-thanksgiving-1639.webp": {
-    "src": "/assets/ttc2026-poster-thanksgiving-1639.webp",
-    "width": 1639,
-    "height": 2048,
+  "/assets/ttc2026-poster-thanksgiving-v2-1440.webp": {
+    "src": "/assets/ttc2026-poster-thanksgiving-v2-1440.webp",
+    "width": 1440,
+    "height": 1800,
     "sizes": "(max-width: 480px) calc(100vw - 56px), (max-width: 980px) 416px, (min-width: 1232px) 428px, calc(40vw - 66px)",
     "variants": [
       {
-        "src": "/assets/ttc2026-poster-thanksgiving-480.webp",
+        "src": "/assets/ttc2026-poster-thanksgiving-v2-480.webp",
         "width": 480,
-        "bytes": 63202
+        "bytes": 49696
       },
       {
-        "src": "/assets/ttc2026-poster-thanksgiving-864.webp",
+        "src": "/assets/ttc2026-poster-thanksgiving-v2-864.webp",
         "width": 864,
-        "bytes": 158236
+        "bytes": 106238
       },
       {
-        "src": "/assets/ttc2026-poster-thanksgiving-1639.webp",
-        "width": 1639,
-        "bytes": 489804
+        "src": "/assets/ttc2026-poster-thanksgiving-v2-1120.webp",
+        "width": 1120,
+        "bytes": 146448
+      },
+      {
+        "src": "/assets/ttc2026-poster-thanksgiving-v2-1440.webp",
+        "width": 1440,
+        "bytes": 195696
       }
     ]
   },
