@@ -1096,8 +1096,8 @@ body { padding-top: var(--nut-panel-height, 32px); }
   inherits: false;
   initial-value: 0deg;
 }
-.pill.purchase-cta { position: relative; isolation: isolate; }
-.pill.purchase-cta::before {
+.pill.purchase-cta:not(.tk-cta) { position: relative; isolation: isolate; }
+.pill.purchase-cta:not(.tk-cta)::before {
   content: "";
   position: absolute;
   inset: -2px;
@@ -1110,10 +1110,10 @@ body { padding-top: var(--nut-panel-height, 32px); }
   -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
 }
-.pill.purchase-cta.cta-on-dark::before { background: conic-gradient(from var(--booking-light-angle), #8a5a2e 0 62%, #f0c172 78%, #fffbe8 92%, #fff6c8 96%, #8a5a2e); }
+.pill.purchase-cta:not(.tk-cta).cta-on-dark::before { background: conic-gradient(from var(--booking-light-angle), #8a5a2e 0 62%, #f0c172 78%, #fffbe8 92%, #fff6c8 96%, #8a5a2e); }
 @media (prefers-reduced-motion: no-preference) {
-  .pill.purchase-cta::before { animation: booking-orbit 3.4s linear infinite; }
-  .pill.purchase-cta:hover::before { animation-duration: 1.4s; }
+  .pill.purchase-cta:not(.tk-cta)::before { animation: booking-orbit 3.4s linear infinite; }
+  .pill.purchase-cta:not(.tk-cta):hover::before { animation-duration: 1.4s; }
 }
 @keyframes booking-orbit { to { --booking-light-angle: 360deg; } }
 
